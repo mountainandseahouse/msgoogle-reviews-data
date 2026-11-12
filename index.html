@@ -753,7 +753,7 @@ function runDashboard() {
       if (cmp.mode === '12' && cmp.cur.n && cmp.prev.n) t += '近 12 個月平均 ' + f2(cmp.cur.avg) + ' 星，' + cmp.label + '為 ' + f2(cmp.prev.avg) + ' 星。';
       take.textContent = t;
     }
-    $('#gr-sub').textContent = '全部資料：' + LO + ' 至 ' + HI + ' · 來源：Google 商家檔案（已移除留言者姓名）';
+    { const g = latestOf(selfName()); $('#gr-sub').textContent = (g ? '資料更新：' + g.date + ' · ' : '') + '評論留言日期：' + LO + ' 至 ' + HI + '（最新一則評論是 ' + HI + ' 留的）· 來源：Google 商家檔案（已移除留言者姓名）'; }
 
     const dAvg = cmp.cur.avg !== null && cmp.prev.avg !== null ? Math.round((cmp.cur.avg - cmp.prev.avg) * 100) / 100 : null;
     const dLow = cmp.cur.low !== null && cmp.prev.low !== null ? cmp.cur.low - cmp.prev.low : null;
@@ -778,7 +778,7 @@ function runDashboard() {
     const a = filt(rows, p);
     const s = stats(a);
     $('#gr-take').textContent = STORE + '：Google 地圖平均 ' + (g.rating == null ? '—' : g.rating.toFixed(1)) + ' 星，共 ' + (g.count == null ? '—' : fmtInt(g.count)) + ' 則評論（' + (g.date || '') + '）。以下分析根據 ' + fmtInt(rows.length) + ' 則評論樣本' + (isFiltered(p) ? '，篩選後剩 ' + fmtInt(s.n) + ' 則' : '') + '。';
-    $('#gr-sub').textContent = '樣本日期：' + (LO || '—') + ' 至 ' + (HI || '—') + ' · 來源：Google 地圖（Places API，每天最多 5 則評論；未保存留言者姓名）';
+    $('#gr-sub').textContent = '資料更新：' + (g.date || '—') + ' · 樣本評論的留言日期：' + (LO || '—') + ' 至 ' + (HI || '—') + '（Google 每天挑最多 5 則「最相關」評論，不一定是最新留言）· 來源：Google 地圖（未保存留言者姓名）';
     setKpi('#gr-k-n', g.count == null ? '—' : fmtInt(g.count), ['Google 上的評論總數；本頁分析用的樣本 ' + fmtInt(rows.length) + ' 則']);
     setKpi('#gr-k-avg', g.rating == null ? '—' : g.rating.toFixed(1), ['Google 上的平均星等（只提供到小數一位）；樣本平均 ' + f2(s.avg)]);
     setKpi('#gr-k-low', pc(s.low), ['依樣本 ' + fmtInt(s.n) + ' 則計算，僅供參考']);
