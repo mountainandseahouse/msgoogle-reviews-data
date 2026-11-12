@@ -1,0 +1,1336 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>山海樓評論分析</title>
+<style>
+:root{color-scheme:light;
+--font-anthropic-sans:system-ui,-apple-system,"Segoe UI","Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+--font-anthropic-serif:"Noto Serif TC","Songti TC","PMingLiU",Georgia,serif;
+--color-bg:#f7f6f2;--color-panel:#ffffff;--color-fg:#1f1e1b;--color-fg-muted:#6b6a64;--color-border-line:#e3e1da;
+--color-ok:#2f7d4f;--color-warn:#b8741a;--color-bad:#c0392b;
+--cds-border:#d9d7cf;--cds-chart-grid:#ecebe5;--cds-chart-muted:#c4c2b9;--cds-chart-reference:#8d8b84;--cds-chart-status-critical:#c8463c;
+--cds-text-secondary:#6b6a64;--cds-surface-popover:#ffffff;--cds-shadow-popover:0 4px 16px rgba(0,0,0,.10);
+--cds-font-weight-medium:600;--cds-radius:10px;
+--cds-gap-xs:.25rem;--cds-gap-sm:.5rem;--cds-gap-md:1rem;--cds-gap-xl:1.75rem;
+--cds-pad-xs:.25rem;--cds-pad-sm:.5rem;--cds-pad-md:.75rem;--cds-pad-lg:1.1rem}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark;
+--color-bg:#1b1a18;--color-panel:#252421;--color-fg:#ecebe6;--color-fg-muted:#a3a19a;--color-border-line:#3a3935;
+--cds-border:#44433e;--cds-chart-grid:#33322e;--cds-chart-muted:#5c5b55;--cds-chart-reference:#8d8b84;--cds-chart-status-critical:#e06a5e;
+--cds-text-secondary:#a3a19a;--cds-surface-popover:#2c2b28;--cds-shadow-popover:0 4px 16px rgba(0,0,0,.4)}}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+.gr-card{overflow-x:auto}
+html,body{margin:0;background:var(--color-bg);color:var(--color-fg);font-family:var(--font-anthropic-sans)}
+body{padding:24px 16px 48px}
+.gw-lock{max-width:380px;margin:12vh auto 0;background:var(--color-panel);border:1px solid var(--color-border-line);border-radius:12px;padding:28px 24px;display:flex;flex-direction:column;gap:14px}
+.gw-lock h1{font-family:var(--font-anthropic-serif);font-weight:400;font-size:1.6rem;margin:0}
+.gw-lock p{margin:0;color:var(--color-fg-muted);font-size:.95rem;line-height:1.5}
+.gw-lock input{font:inherit;font-size:1.05rem;padding:.6rem .8rem;border:1px solid var(--cds-border);border-radius:8px;background:var(--color-bg);color:var(--color-fg)}
+.gw-lock button{font:inherit;font-size:1.05rem;padding:.6rem;border:0;border-radius:8px;background:var(--color-fg);color:var(--color-bg);cursor:pointer}
+.gw-lock button:disabled{opacity:.6;cursor:wait}
+.gw-err{color:var(--color-bad)!important}
+.gw-bar{max-width:1200px;margin:0 auto 12px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;color:var(--color-fg-muted);font-size:.85rem}
+.gw-bar button{font:inherit;font-size:.85rem;background:none;border:1px solid var(--color-border-line);border-radius:999px;padding:.2rem .7rem;color:var(--color-fg-muted);cursor:pointer}
+</style>
+<style>
+.gr{--cds-font-size-caption:.92rem;--cds-font-size-body:1.05rem;--cds-font-size-heading:1.25rem;--cds-font-size-title:2.1rem;max-width:1200px;margin-inline:auto;display:flex;flex-direction:column;gap:var(--cds-gap-xl);font-family:var(--font-anthropic-sans);font-size:var(--cds-font-size-body);color:var(--color-fg);font-variant-numeric:tabular-nums}
+.gr-title{font-family:var(--font-anthropic-serif);font-weight:400;font-size:var(--cds-font-size-title);margin:0 0 var(--cds-gap-xs);line-height:1.2}
+.gr-take{margin:0;font-size:var(--cds-font-size-heading);line-height:1.55;min-height:1.6em}
+.gr-sub{margin:var(--cds-gap-xs) 0 0;color:var(--color-fg-muted);font-size:var(--cds-font-size-caption)}
+.gr-sec{display:flex;flex-direction:column;gap:var(--cds-gap-md)}
+.gr-h2{font-size:var(--cds-font-size-heading);font-weight:var(--cds-font-weight-medium);margin:0}
+.gr-note{margin:0;color:var(--color-fg-muted);font-size:var(--cds-font-size-caption);line-height:1.5}
+.gr-grid{display:grid;gap:var(--cds-gap-md);grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr))}
+.gr-kpis{display:grid;gap:var(--cds-gap-md);grid-template-columns:repeat(auto-fit,minmax(min(100%,12.5rem),1fr))}
+.gr-card{background:var(--color-panel);border:1px solid var(--color-border-line);border-radius:var(--cds-radius);padding:var(--cds-pad-lg);min-width:0;display:flex;flex-direction:column;gap:var(--cds-gap-sm)}
+.gr-wide{grid-column:1/-1}
+.gr-ct{font-size:var(--cds-font-size-heading);font-weight:var(--cds-font-weight-medium);margin:0}
+.gr-kl{color:var(--color-fg-muted);font-size:var(--cds-font-size-caption)}
+.gr-big{font-family:var(--font-anthropic-serif);font-weight:400;font-size:2.5rem;line-height:1.1}
+.gr-delta{font-size:var(--cds-font-size-caption);color:var(--color-fg-muted);line-height:1.5}
+.gr-ok{color:var(--color-ok)}
+.gr-bad{color:var(--color-bad)}
+.gr-frow{display:flex;flex-wrap:wrap;align-items:center;gap:var(--cds-gap-sm)}
+.gr-fl{color:var(--color-fg-muted);font-size:var(--cds-font-size-caption);min-width:2.5rem}
+.gr-in{font:inherit;color:var(--color-fg);background:var(--color-bg);border:1px solid var(--color-border-line);border-radius:var(--cds-radius);padding:.35rem .55rem}
+.gr-search{flex:1 1 14rem;min-width:10rem}
+.gr-btns{display:flex;flex-wrap:wrap;gap:.35rem}
+.gr-btn{font:inherit;font-size:var(--cds-font-size-caption);color:var(--color-fg);background:var(--color-bg);border:1px solid var(--color-border-line);border-radius:999px;padding:.3rem .75rem;cursor:pointer}
+.gr-btn:hover{background:var(--cds-chart-grid)}
+.gr-btn[aria-pressed=true]{background:var(--color-fg);color:var(--color-bg);border-color:var(--color-fg)}
+.gr-none{color:var(--color-fg-muted);font-size:var(--cds-font-size-caption)}
+.gr-chart{position:relative;min-height:320px;width:100%}
+.gr-empty{display:flex;align-items:center;justify-content:center;min-height:8rem;color:var(--color-fg-muted);font-size:var(--cds-font-size-caption)}
+.gr-state{display:none;align-items:center;justify-content:center;gap:.5rem;min-height:10rem;color:var(--color-fg-muted);font-size:var(--cds-font-size-caption)}
+.gr-state.on{display:flex}
+.gr-dot{width:.375rem;height:.375rem;border-radius:50%;background:var(--color-bad)}
+.gr-dist{display:flex;flex-direction:column;gap:.45rem;min-height:11rem}
+.gr-emptybox{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;color:var(--color-fg-muted)}
+.gr-dr{display:grid;grid-template-columns:3.5rem 1fr 11rem;align-items:center;gap:.6rem;cursor:pointer;border-radius:6px;padding:.1rem .2rem}
+.gr-dr:hover{background:var(--cds-chart-grid)}
+.gr-dl{color:var(--color-fg-muted)}
+.gr-dt{height:1.6rem;background:var(--cds-chart-grid);border-radius:4px;overflow:hidden}
+.gr-df{height:100%;border-radius:4px}
+.gr-dv{text-align:right}
+.gr-scroll{max-height:30rem;overflow:auto}
+.gr-scroll-tall{max-height:42rem;overflow:auto}
+.gr-table{width:100%;border-collapse:collapse}
+.gr-table th{position:sticky;top:0;background:var(--color-panel);text-align:left;font-weight:var(--cds-font-weight-medium);color:var(--color-fg-muted);font-size:var(--cds-font-size-caption);padding:.4rem .6rem;border-bottom:1px solid var(--color-border-line);white-space:nowrap}
+.gr-table td{padding:.55rem .6rem;border-bottom:1px solid var(--color-border-line);vertical-align:top;line-height:1.5}
+.gr-table tbody tr:last-child td{border-bottom:0}
+.gr-click tbody tr{cursor:pointer}
+.gr-click tbody tr:hover td{background:var(--cds-chart-grid)}
+.gr-table tr.sel td{background:var(--cds-chart-grid);font-weight:var(--cds-font-weight-medium)}
+.gr-r th:nth-child(n+2),.gr-r td:nth-child(n+2){text-align:right}
+#gr-list td:nth-child(1),#gr-list td:nth-child(2){white-space:nowrap}
+#gr-list td:nth-child(3){min-width:7rem}
+#gr-list td:nth-child(4){min-width:18rem}
+#gr-list td:nth-child(5){color:var(--color-fg-muted);font-size:var(--cds-font-size-caption)}
+#gr-list tbody tr{cursor:pointer}
+#gr-list tbody tr:hover td{background:var(--cds-chart-grid)}
+.gr-more{align-self:center}
+.gr-tip{position:absolute;top:6px;left:0;pointer-events:none;background:var(--cds-surface-popover);border:1px solid var(--cds-border);border-radius:var(--cds-radius);box-shadow:var(--cds-shadow-popover);padding:var(--cds-pad-xs) var(--cds-pad-sm);font-size:var(--cds-font-size-caption);line-height:1.5;white-space:nowrap;z-index:2}
+.gr-tip[hidden]{display:none}
+.gr-tt{color:var(--cds-text-secondary)}
+.gr-sw{display:inline-block;width:.6rem;height:.6rem;border-radius:2px;margin-right:.4rem}
+.gr-legend{display:flex;gap:1rem;flex-wrap:wrap;color:var(--color-fg-muted);font-size:var(--cds-font-size-caption)}
+.gr-method{margin:0;padding-left:1.2rem;color:var(--color-fg-muted);font-size:var(--cds-font-size-caption);line-height:1.7}
+.gr svg text{font-family:var(--font-anthropic-sans)}
+.gr-stack{display:flex;height:2.2rem;border-radius:var(--cds-radius);overflow:hidden;background:var(--cds-chart-grid)}
+.gr-stack>div{height:100%;min-width:2px;cursor:pointer}
+.gr-sr{display:grid;grid-template-columns:7.5rem 1fr 11rem;align-items:center;gap:.6rem;cursor:pointer;border-radius:6px;padding:.15rem .25rem}
+.gr-sr:hover{background:var(--cds-chart-grid)}
+.gr-sr.sel{background:var(--cds-chart-grid);font-weight:var(--cds-font-weight-medium)}
+.gr-sl{display:flex;flex-direction:column;gap:.4rem;min-height:8rem}
+.gr-pending{color:var(--color-fg-muted);font-size:var(--cds-font-size-caption)}
+#gr-list td:nth-child(6),#gr-list td:nth-child(7),#gr-list td:nth-child(8){min-width:6rem;font-size:var(--cds-font-size-caption)}
+.gr svg .gr-hit{cursor:pointer}
+.gr-lf{display:flex;flex-direction:column;gap:var(--cds-gap-sm);padding-bottom:var(--cds-pad-sm);border-bottom:1px solid var(--color-border-line)}
+.gr-lf.on{border:2px solid var(--color-warn);border-radius:var(--cds-radius);padding:var(--cds-pad-sm)}
+.gr-lcount-on{color:var(--color-warn);font-weight:var(--cds-font-weight-medium)}
+.gr-crank td:nth-child(1){width:3rem;color:var(--color-fg-muted)}
+.gr-crank tr.me td{font-weight:var(--cds-font-weight-medium);background:var(--cds-chart-grid)}
+.gr-cbar{display:flex;align-items:center;gap:.5rem;min-width:9rem}
+.gr-cbar>i{display:block;height:.9rem;border-radius:3px}
+.gr-ctog{display:flex;flex-wrap:wrap;gap:.35rem;align-items:center}
+.gr-sel{font:inherit;color:var(--color-fg);background:var(--color-bg);border:1px solid var(--color-border-line);border-radius:var(--cds-radius);padding:.3rem .5rem}
+.gr-tabs{display:flex;flex-wrap:wrap;gap:.25rem .25rem;border-bottom:1px solid var(--color-border-line)}
+.gr-tab{font:inherit;font-size:var(--cds-font-size-heading);color:var(--color-fg-muted);background:none;border:0;border-bottom:3px solid transparent;padding:.5rem .8rem;cursor:pointer;white-space:nowrap}
+.gr-tab.ov{margin-right:.75rem}
+.gr-tab.me-tab::after{content:"（我們）";font-size:var(--cds-font-size-caption);color:var(--color-fg-muted)}
+.gr-tab[aria-selected=true]{color:var(--color-fg);border-bottom-color:var(--color-fg);font-weight:var(--cds-font-weight-medium)}
+.gr-page{display:flex;flex-direction:column;gap:var(--cds-gap-xl)}
+.gr-page[hidden]{display:none}
+.gr-storebar{display:flex;align-items:center;gap:var(--cds-gap-sm)}
+.gr-store{font-size:var(--cds-font-size-heading);padding:.4rem .8rem;min-width:14rem}
+.gr-sample{border:2px solid var(--color-warn);border-radius:var(--cds-radius);padding:var(--cds-pad-sm) var(--cds-pad-lg);color:var(--color-warn);line-height:1.6}
+.gr-sample[hidden]{display:none}
+.gr-na{display:flex;align-items:center;justify-content:center;min-height:6rem;color:var(--color-fg-muted);font-size:var(--cds-font-size-caption);text-align:center}
+.gr-mini{display:flex;height:1rem;width:12rem;border-radius:3px;overflow:hidden;background:var(--cds-chart-grid)}
+.gr-mini>i{display:block;height:100%}
+.gr-scope{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;align-items:center;gap:var(--cds-gap-sm);background:var(--color-panel);border:1px solid var(--color-border-line);border-radius:var(--cds-radius);padding:var(--cds-pad-sm) var(--cds-pad-lg);box-shadow:var(--cds-shadow-popover)}
+.gr-scope-t{flex:1 1 16rem;line-height:1.5}
+.gr-scope.on{border:2px solid var(--color-warn)}
+.gr-scope.on .gr-scope-t{color:var(--color-warn);font-weight:var(--cds-font-weight-medium)}
+.gr-clear{font:inherit;font-size:var(--cds-font-size-caption);color:var(--color-bg);background:var(--color-fg);border:0;border-radius:999px;padding:.35rem .9rem;cursor:pointer}
+.gr-detail{display:flex;flex-direction:column;gap:var(--cds-gap-sm);border-top:2px solid var(--color-border-line);padding-top:var(--cds-pad-md);margin-top:var(--cds-gap-sm)}
+.gr-detail[hidden]{display:none}
+.gr-detail-card{background:var(--color-panel);border:1px solid var(--color-border-line);border-radius:var(--cds-radius);padding:var(--cds-pad-lg);margin-top:0}
+.gr-dh{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:var(--cds-gap-sm)}
+.gr-dtitle{font-weight:var(--cds-font-weight-medium)}
+.gr-dtable td:nth-child(1),.gr-dtable td:nth-child(2){white-space:nowrap}
+.gr-dtable td:nth-child(3){min-width:18rem}
+.gr-dtable td:nth-child(n+4){font-size:var(--cds-font-size-caption);min-width:5rem}
+.gr-dtable tbody tr{cursor:pointer}
+.gr-dr.sel,.gr-sr.sel{background:var(--cds-chart-grid);font-weight:var(--cds-font-weight-medium);outline:2px solid var(--color-fg);outline-offset:-2px}
+</style>
+</head>
+<body>
+<form class="gw-lock" id="gw-lock" autocomplete="off">
+  <h1>山海樓 Google 評論分析</h1>
+  <p>請輸入密碼。</p>
+  <input type="password" id="gw-pw" aria-label="密碼" autocomplete="current-password" required>
+  <button type="submit" id="gw-go">打開</button>
+  <p id="gw-msg" role="status"></p>
+</form>
+<div id="gw-app" hidden>
+<div class="gw-bar"><span id="gw-upd"></span><button type="button" id="gw-out">登出</button></div>
+
+
+<div class="gr">
+
+  <header id="gr-head">
+    <h1 class="gr-title">山海樓 Google 評論分析</h1>
+  </header>
+
+  <nav class="gr-tabs" role="tablist" aria-label="分頁">
+    <button type="button" class="gr-tab ov" role="tab" id="gr-tab-ov" data-tab="ov" aria-selected="true">總覽</button>
+  </nav>
+
+  <section class="gr-page" id="gr-page-ov" aria-label="總覽">
+    <p class="gr-take" id="gr-ov-take" data-source="comp_history"></p>
+    <div class="gr-kpis" id="gr-ov-kpis">
+      <div class="gr-card" id="gr-ov-k1" data-source="comp_history"><div class="gr-kl">山海樓平均星等</div><div class="gr-big" data-role="big">—</div><div class="gr-delta" data-role="sub"></div></div>
+      <div class="gr-card" id="gr-ov-k2" data-source="comp_history"><div class="gr-kl">競品平均星等（9 家）</div><div class="gr-big" data-role="big">—</div><div class="gr-delta" data-role="sub"></div></div>
+      <div class="gr-card" id="gr-ov-k3" data-source="comp_history"><div class="gr-kl">山海樓評論總數</div><div class="gr-big" data-role="big">—</div><div class="gr-delta" data-role="sub"></div></div>
+      <div class="gr-card" id="gr-ov-k4" data-source="comp_history"><div class="gr-kl">競品平均評論數（9 家）</div><div class="gr-big" data-role="big">—</div><div class="gr-delta" data-role="sub"></div></div>
+    </div>
+  <section class="gr-sec" id="gr-comp-sec">
+    <h2 class="gr-h2">與競品比較</h2>
+    <p class="gr-note">每天早上自動記錄一次各店在 Google 地圖上的平均星等（Google 只提供到小數一位）與評論總數；山海樓也用同一方式取得，比較才公平。僅供內部參考。</p>
+    <div class="gr-grid">
+      <div class="gr-card gr-wide" id="gr-comp-rank-card">
+        <h3 class="gr-ct">目前排名</h3>
+        <p class="gr-note">點一家店，可到「店家分析」看那家的詳細分析。</p>
+        <p class="gr-note" id="gr-comp-asof" data-source="comp_history"></p>
+        <div data-source="comp_history">
+          <table class="gr-table gr-crank gr-click" id="gr-comp-rank">
+            <thead><tr><th>#</th><th>店家</th><th>平均星等</th><th>評論數</th><th>評論數比 7 天前</th><th>星等比 7 天前</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="gr-card gr-wide" id="gr-comp-trend-card">
+        <h3 class="gr-ct">每日趨勢</h3>
+        <div class="gr-ctog">
+          <div class="gr-btns" id="gr-comp-metric">
+            <button type="button" class="gr-btn" data-m="rating" aria-pressed="true">平均星等</button>
+            <button type="button" class="gr-btn" data-m="count" aria-pressed="false">評論數</button>
+          </div>
+          <span class="gr-fl">對照</span>
+          <select class="gr-sel" id="gr-comp-pick" aria-label="選一家競品對照"></select>
+        </div>
+        <p class="gr-note">山海樓與選取的店家用顏色標示，其他店家以灰色顯示；滑鼠移到圖上可看當天各店數值。</p>
+        <div class="gr-chart" id="gr-comp-trend" data-source="comp_history"></div>
+      </div>
+    </div>
+  </section>
+
+    <section class="gr-sec" id="gr-ov-senti-sec">
+      <div class="gr-card" id="gr-ov-senti-card">
+        <h3 class="gr-ct">好評與負評對照</h3>
+        <p class="gr-note">AI 逐則判讀各店有文字的評論。山海樓用全部評論計算；競品只能用 Google 每天提供的評論樣本（每天最多 5 則），樣本數少時僅供參考。點一家店可到「店家分析」看詳細。</p>
+        <div data-source="sentiment comp_sentiment reviews comp_reviews">
+          <table class="gr-table gr-click" id="gr-ov-senti">
+            <thead><tr><th>店家</th><th>判讀則數</th><th>正面</th><th>混合</th><th>負面</th><th>占比</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <section class="gr-page" id="gr-page-st" aria-label="店家分析" hidden>
+  <p class="gr-take" id="gr-take" data-source="reviews"></p>
+  <p class="gr-sub" id="gr-sub" data-source="reviews"></p>
+  <div class="gr-sample" id="gr-sample" hidden></div>
+
+
+  <div class="gr-scope" id="gr-scope" role="status" aria-live="polite">
+    <span class="gr-scope-t" id="gr-scope-t" data-source="reviews"></span>
+    <button type="button" class="gr-clear" id="gr-scope-clear" hidden>清除篩選，看全部評論</button>
+  </div>
+
+  <section class="gr-card" id="gr-dist-card" aria-label="各星等占比">
+    <h2 class="gr-ct">各星等占比</h2>
+    <p class="gr-note">每個星等占目前範圍全部評論的比例，依上方篩選計算。點一個星等，可在這張卡片下方看那些評論。</p>
+    <div class="gr-stack" id="gr-dist-stack" data-source="reviews" aria-label="各星等占比"></div>
+    <div class="gr-dist" id="gr-dist" data-source="reviews"></div>
+    <div class="gr-detail" data-slot="dist" hidden></div>
+  </section>
+
+  <section class="gr-card" id="gr-filters" aria-label="篩選">
+    <h2 class="gr-ct">篩選</h2>
+    <p class="gr-note">這裡的篩選會套用到整頁每一張圖表和表格，規則都一樣。點圖表裡的項目不會改變篩選，只會在那張圖下方展開明細。每次打開儀表板都會從全部評論開始。</p>
+    <div class="gr-frow">
+      <span class="gr-fl">日期</span>
+      <input class="gr-in" id="gr-from" type="date" min="2000-01-01" max="2099-12-31" aria-label="起始日期">
+      <span class="gr-fl">至</span>
+      <input class="gr-in" id="gr-to" type="date" min="2000-01-01" max="2099-12-31" aria-label="結束日期">
+      <div class="gr-btns">
+        <button type="button" class="gr-btn" id="gr-r12" aria-pressed="false">近 12 個月</button>
+        <button type="button" class="gr-btn" id="gr-r3" aria-pressed="false">近 3 個月</button>
+        <button type="button" class="gr-btn" id="gr-rall" aria-pressed="false">全部日期</button>
+      </div>
+    </div>
+    <div class="gr-frow">
+      <span class="gr-fl">星等</span>
+      <div class="gr-btns" id="gr-stars">
+        <button type="button" class="gr-btn" data-star="5" aria-pressed="false">5 星</button>
+        <button type="button" class="gr-btn" data-star="4" aria-pressed="false">4 星</button>
+        <button type="button" class="gr-btn" data-star="3" aria-pressed="false">3 星</button>
+        <button type="button" class="gr-btn" data-star="2" aria-pressed="false">2 星</button>
+        <button type="button" class="gr-btn" data-star="1" aria-pressed="false">1 星</button>
+      </div>
+      <input class="gr-in gr-search" id="gr-kw" type="search" placeholder="搜尋評論內容（例如：上菜、杏仁豆腐）" aria-label="搜尋評論內容">
+    </div>
+  </section>
+
+  <div class="gr-state" id="gr-state"></div>
+
+  <div class="gr-sec" id="gr-content" style="gap:var(--cds-gap-xl)">
+
+  <section class="gr-sec" id="gr-kpi-sec" aria-label="核心指標">
+    <div class="gr-kpis">
+      <div class="gr-card" id="gr-k-n" data-source="reviews"><div class="gr-kl">評論數</div><div class="gr-big" data-role="big">—</div><div class="gr-delta" data-role="sub"></div></div>
+      <div class="gr-card" id="gr-k-avg" data-source="reviews"><div class="gr-kl">平均星等</div><div class="gr-big" data-role="big">—</div><div class="gr-delta" data-role="sub"></div></div>
+      <div class="gr-card" id="gr-k-low" data-source="reviews"><div class="gr-kl">1–2 星占比</div><div class="gr-big" data-role="big">—</div><div class="gr-delta" data-role="sub"></div></div>
+      <div class="gr-card" id="gr-k-text" data-source="reviews"><div class="gr-kl">有文字內容的評論</div><div class="gr-big" data-role="big">—</div><div class="gr-delta" data-role="sub"></div></div>
+      <div class="gr-card" id="gr-k-photo" data-source="reviews"><div class="gr-kl">附照片的評論</div><div class="gr-big" data-role="big">—</div><div class="gr-delta" data-role="sub"></div></div>
+    </div>
+  </section>
+
+  <section class="gr-sec" id="gr-trend-sec">
+    <h2 class="gr-h2">評分趨勢</h2>
+    <div class="gr-grid">
+      <div class="gr-card gr-wide" id="gr-q-card">
+        <h3 class="gr-ct">每季評論數與平均星等</h3>
+        <p class="gr-note">按季彙整，依上方篩選計算（沒有選日期時從 2018 年起）。點一季的長條，可在這張圖下方看那一季的評論。最新一季尚未結束，樣本較少。</p>
+        <div class="gr-legend"><span><i class="gr-sw" style="background:var(--cds-chart-muted)"></i>評論數（左軸）</span><span><i class="gr-sw" id="gr-sw-line"></i>平均星等（右軸）</span></div>
+        <div class="gr-chart" id="gr-q" data-source="reviews"></div>
+        <div class="gr-detail" data-slot="q" hidden></div>
+      </div>
+      <div class="gr-card gr-wide" id="gr-years-card">
+        <h3 class="gr-ct">逐年比較</h3>
+        <p class="gr-note">依上方篩選計算。點一年，可在這張表下方看那一年的評論。1–2 星占比＝該年 1–2 星評論 ÷ 該年評論。</p>
+        <div class="gr-scroll" data-source="reviews">
+          <table class="gr-table gr-r gr-click" id="gr-years">
+            <thead><tr><th>年</th><th>評論數</th><th>平均星等</th><th>1–2 星占比</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div class="gr-detail" data-slot="years" hidden></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gr-sec" id="gr-senti-sec">
+    <h2 class="gr-h2">好評與負評（AI 逐則判讀）</h2>
+    <div class="gr-grid">
+      <div class="gr-card gr-wide" id="gr-senti-card">
+        <h3 class="gr-ct">整體評價</h3>
+        <p class="gr-note">只計有文字內容的評論，依上方篩選計算。AI 逐則判讀：只有稱讚＝正面；有稱讚也有抱怨＝混合；只有抱怨＝負面；沒有明確褒貶＝中立。占比的分母是目前範圍內已判讀的評論。點一類，可在這張卡片下方看那些評論。</p>
+        <div class="gr-stack" id="gr-senti-stack" data-source="sentiment reviews" aria-label="整體評價占比"></div>
+        <div class="gr-sl" id="gr-senti-rows" data-source="sentiment reviews"></div>
+        <p class="gr-pending" id="gr-senti-pending" data-source="sentiment reviews"></p>
+        <div class="gr-detail" data-slot="senti" hidden></div>
+      </div>
+      <div class="gr-card" id="gr-good-card">
+        <h3 class="gr-ct">顧客稱讚什麼</h3>
+        <p class="gr-note">稱讚到該項目的評論數，占目前範圍已判讀評論的比例；一則評論可同時稱讚多項。點一列，可在下方看那些評論。</p>
+        <div class="gr-sl" id="gr-good" data-source="sentiment reviews"></div>
+      </div>
+      <div class="gr-card" id="gr-bad-card">
+        <h3 class="gr-ct">顧客抱怨什麼</h3>
+        <p class="gr-note">抱怨到該項目的評論數，占目前範圍已判讀評論的比例；一則評論可同時抱怨多項。點一列，可在下方看那些評論。</p>
+        <div class="gr-sl" id="gr-bad" data-source="sentiment reviews"></div>
+      </div>
+      <div class="gr-detail gr-detail-card gr-wide" data-slot="gb" hidden></div>
+    </div>
+  </section>
+
+  <section class="gr-sec" id="gr-theme-sec">
+    <h2 class="gr-h2">顧客在評論裡談什麼</h2>
+    <div class="gr-grid">
+      <div class="gr-card gr-wide" id="gr-themes-card">
+        <h3 class="gr-ct">主題與評價的關係</h3>
+        <p class="gr-note">只計有文字內容的評論，以關鍵字比對分類，一則評論可同時屬於多個主題。「平均星等」是提到該主題的整則評論的星等，不是顧客對該主題單獨的打分；「與整體差」是與目前範圍內全部有文字評論的平均相比。依上方篩選計算，點一列可在這張表下方看提到該主題的評論。</p>
+        <div class="gr-scroll" data-source="reviews">
+          <table class="gr-table gr-r gr-click" id="gr-themes">
+            <thead><tr><th>主題</th><th>提及評論數</th><th>占有文字評論</th><th>平均星等</th><th>與整體差</th><th>其中 1–2 星</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div class="gr-detail" data-slot="themes" hidden></div>
+      </div>
+      <div class="gr-card gr-wide" id="gr-lang-card">
+        <h3 class="gr-ct">評論語言</h3>
+        <p class="gr-note">依評論原文判斷，Google 自動附上的翻譯已排除。依上方篩選計算。</p>
+        <div data-source="reviews">
+          <table class="gr-table gr-r" id="gr-lang">
+            <thead><tr><th>語言</th><th>評論數</th><th>占有文字評論</th><th>平均星等</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gr-sec" id="gr-list-sec">
+    <h2 class="gr-h2">個別評論（最新在最上面）</h2>
+    <div class="gr-card" id="gr-list-card">
+      <div class="gr-lf" id="gr-lf" aria-label="個別評論篩選">
+        <div class="gr-frow">
+          <span class="gr-fl">日期</span>
+          <input class="gr-in" id="gr-lf-from" type="date" min="2000-01-01" max="2099-12-31" aria-label="列表起始日期">
+          <span class="gr-fl">至</span>
+          <input class="gr-in" id="gr-lf-to" type="date" min="2000-01-01" max="2099-12-31" aria-label="列表結束日期">
+        </div>
+        <div class="gr-frow">
+          <span class="gr-fl">星等</span>
+          <div class="gr-btns" id="gr-lf-stars">
+            <button type="button" class="gr-btn" data-star="5" aria-pressed="false">5 星</button>
+            <button type="button" class="gr-btn" data-star="4" aria-pressed="false">4 星</button>
+            <button type="button" class="gr-btn" data-star="3" aria-pressed="false">3 星</button>
+            <button type="button" class="gr-btn" data-star="2" aria-pressed="false">2 星</button>
+            <button type="button" class="gr-btn" data-star="1" aria-pressed="false">1 星</button>
+          </div>
+          <button type="button" class="gr-clear" id="gr-lf-clear" hidden>清除列表篩選</button>
+        </div>
+        <p class="gr-note">這裡的篩選只影響下面這張評論表，不會改變上面的圖表；星等可複選。重新打開儀表板會自動清除。</p>
+      </div>
+      <p class="gr-note" id="gr-list-count"></p>
+      <div class="gr-scroll-tall">
+        <table class="gr-table" id="gr-list" data-source="reviews" data-row-key="id">
+          <thead><tr><th data-field="date">日期</th><th data-field="rating">星等</th><th data-field="themes">主題</th><th data-field="text">評論內容</th><th data-field="id">編號</th><th data-source="sentiment" data-field="s">AI 判讀</th><th data-source="sentiment" data-field="good">稱讚</th><th data-source="sentiment" data-field="bad">抱怨</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="gr-sec" id="gr-method-sec">
+    <h2 class="gr-h2">資料與方法說明</h2>
+    <div class="gr-card">
+      <ul class="gr-method">
+        <li>資料來自 Google 商家檔案 API，只含山海樓這一間分店；留言者姓名與頭像已移除，只留評論日期、星等、文字與是否附照片。</li>
+        <li>畫面上的數字與圖表，都是依上方篩選條件直接從評論明細即時算出；每一張圖表套用的篩選規則都相同。</li>
+        <li>點圖表或表格裡的項目，只會在該處下方展開那些評論，不會改變其他圖表；一次只展開一個，按「收起」或點另一個項目即可切換。</li>
+        <li>主題標記是關鍵字比對，不是人工閱讀，適合看大方向；個別評論請以原文為準。</li>
+        <li>「好評與負評」是 AI（Claude）逐則閱讀有文字的評論後判讀：整體是正面、混合、負面或中立，以及稱讚和抱怨了哪些項目（餐點口味、食材與擺盤、服務態度、上菜速度、環境氛圍、價格CP值、份量、訂位與等候、衛生清潔、交通停車、飲品酒水、其他）。判讀可能有誤，個別評論請以原文為準；新評論每天由排程一併判讀。</li>
+        <li>「近 12 個月」以資料裡最新一則評論的日期往前推 365 天；沒有選日期時，指標卡會顯示近 12 個月與前 12 個月的對照，選了日期範圍就改和「前一段同樣長度的期間」比較（比較用的前一期不受日期篩選限制，但套用星等與關鍵字）。</li>
+      </ul>
+    </div>
+  </section>
+
+  </div>
+  </section>
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script>
+(function () {
+  const DATA_URL = 'web/data.enc';
+  const enc = new TextEncoder();
+  async function decryptBundle(buf, pass) {
+    const b = new Uint8Array(buf);
+    if (new TextDecoder().decode(b.slice(0, 8)) !== 'Salted__') throw new Error('format');
+    const salt = b.slice(8, 16), ct = b.slice(16);
+    const km = await crypto.subtle.importKey('raw', enc.encode(pass), 'PBKDF2', false, ['deriveBits']);
+    const bits = new Uint8Array(await crypto.subtle.deriveBits({ name: 'PBKDF2', salt, iterations: 200000, hash: 'SHA-256' }, km, 384));
+    const key = await crypto.subtle.importKey('raw', bits.slice(0, 32), 'AES-CBC', false, ['decrypt']);
+    let plain;
+    try { plain = await crypto.subtle.decrypt({ name: 'AES-CBC', iv: bits.slice(32, 48) }, key, ct); }
+    catch (e) { throw new Error('badpass'); }
+    const ds = new Blob([plain]).stream().pipeThrough(new DecompressionStream('gzip'));
+    return JSON.parse(await new Response(ds).text());
+  }
+  const form = document.getElementById('gw-lock'), pw = document.getElementById('gw-pw'), msg = document.getElementById('gw-msg'), go = document.getElementById('gw-go');
+  let started = false;
+  async function unlock(pass, quiet) {
+    go.disabled = true; msg.className = ''; msg.textContent = '解密中…';
+    try {
+      const r = await fetch(DATA_URL + '?t=' + Date.now(), { cache: 'no-store' });
+      if (!r.ok) throw new Error('fetch');
+      const data = await decryptBundle(await r.arrayBuffer(), pass);
+      try { sessionStorage.setItem('gw-pw', pass); } catch (e) {}
+      start(data);
+    } catch (e) {
+      try { sessionStorage.removeItem('gw-pw'); } catch (x) {}
+      msg.className = 'gw-err';
+      msg.textContent = quiet ? '' : (e.message === 'badpass' ? '密碼不正確，請再試一次。' : e.message === 'fetch' ? '資料讀取失敗，請稍後再試。' : '無法開啟，請改用最新版的 Chrome、Safari 或 Edge。');
+      go.disabled = false; pw.select();
+    }
+  }
+  form.addEventListener('submit', (ev) => { ev.preventDefault(); if (pw.value) unlock(pw.value, false); });
+  document.getElementById('gw-out').addEventListener('click', () => { try { sessionStorage.removeItem('gw-pw'); } catch (e) {} location.reload(); });
+  let saved = null; try { saved = sessionStorage.getItem('gw-pw'); } catch (e) {}
+  if (saved) unlock(saved, true);
+  function start(data) {
+    if (started) return; started = true;
+    form.hidden = true; document.getElementById('gw-app').hidden = false;
+    const u = data.updated ? new Date(data.updated) : null;
+    document.getElementById('gw-upd').textContent = u ? '資料更新：' + u.toLocaleString('zh-TW', { hour12: false }) : '';
+    let params = {}; const cbs = [];
+    window.dash = {
+      colors: ['#3a6fd8', '#d98a2b', '#2f9e8f', '#9b59b6', '#c0392b', '#7f8c3a', '#e05d9a', '#5d6d7e'],
+      data: (id) => (data[id] ? { status: 'ok', data: data[id] } : { status: 'empty', data: [] }),
+      onData: (f) => { cbs.push(f); f(); },
+      params: () => params,
+      setParams: (o) => { params = Object.assign({}, params, o); cbs.forEach((f) => f()); }
+    };
+    runDashboard();
+  }
+})();
+function runDashboard() {
+(function () {
+  const root = document.querySelector('.gr');
+  const $ = (s) => root.querySelector(s);
+  const $$ = (s) => Array.from(root.querySelectorAll(s));
+  const el = (tag, cls, txt) => { const e = document.createElement(tag); if (cls) e.className = cls; if (txt !== undefined) e.textContent = txt; return e; };
+  const fmtInt = d3.format(',');
+  const pct = d3.format('.1%');
+  const f2 = (v) => (v === null || v === undefined || Number.isNaN(v) ? '—' : Number(v).toFixed(2));
+  const pc = (v) => (v === null || v === undefined || Number.isNaN(v) ? '—' : pct(v));
+  const sgn = (v, f) => (v > 0 ? '+' : '') + f(v);
+
+  /* ---------- 日期工具 ---------- */
+  const add = (d, n) => { const x = new Date(d + 'T00:00:00Z'); x.setUTCDate(x.getUTCDate() + n); return x.toISOString().slice(0, 10); };
+  const days = (a, b) => Math.round((Date.parse(b + 'T00:00:00Z') - Date.parse(a + 'T00:00:00Z')) / 86400000);
+  const qOf = (d) => d.slice(0, 4) + ' Q' + (Math.floor((Number(d.slice(5, 7)) - 1) / 3) + 1);
+  const QB = [['01-01', '03-31'], ['04-01', '06-30'], ['07-01', '09-30'], ['10-01', '12-31']];
+  const qBounds = (q) => { const y = q.slice(0, 4), n = Number(q.slice(6)); return { from: y + '-' + QB[n - 1][0], to: y + '-' + QB[n - 1][1] }; };
+
+  /* ---------- 資料 ---------- */
+  let cacheRef = null, cacheRows = [], LO = '', HI = '';
+  function loadRows() {
+    const st = dash.data('reviews');
+    if (st.status !== 'ok') return null;
+    if (st.data !== cacheRef) {
+      cacheRef = st.data;
+      cacheRows = st.data.map((r) => ({
+        id: String(r.id), date: String(r.date), rating: Number(r.rating), lang: String(r.lang),
+        hasText: Number(r.has_text) === 1, photos: Number(r.photos), text: String(r.text || ''),
+        themes: String(r.themes || '').split('|').filter(Boolean)
+      }));
+    }
+    if (isSelf()) { const ds = cacheRows.map((r) => r.date).sort(); LO = ds[0] || ''; HI = ds[ds.length - 1] || ''; }
+    return cacheRows;
+  }
+
+  let SENT = null; // 目前店家使用的判讀對照表
+  const toSent = (r) => ({ s: String(r.s), good: String(r.good || '').split('、').filter(Boolean), bad: String(r.bad || '').split('、').filter(Boolean), goodTxt: String(r.good || ''), badTxt: String(r.bad || '') });
+  let sentRef = null, SELFSENT = null, csentRef = null, COMPSENT = null;
+  function loadSelfSent() {
+    const st = dash.data('sentiment');
+    if (st.status !== 'ok') return null;
+    if (st.data !== sentRef) { sentRef = st.data; SELFSENT = new Map(); st.data.forEach((r) => SELFSENT.set(String(r.id), toSent(r))); }
+    return SELFSENT;
+  }
+  function loadCompSent() {
+    const st = dash.data('comp_sentiment');
+    if (st.status !== 'ok') return null;
+    if (st.data !== csentRef) { csentRef = st.data; COMPSENT = new Map(); st.data.forEach((r) => COMPSENT.set(String(r.rid), toSent(r))); }
+    return COMPSENT;
+  }
+
+  /* ---------- 店家（山海樓或競品）---------- */
+  // 與 GitHub 端 build_dashboard_data.py 相同的主題關鍵字，用來替競品評論樣本標主題
+  const THEMES = {
+    '餐點口味': ['好吃', '美味', '美食', '餐點', '料理', '口味', '味道', '菜色', '好味', '入味', '調味', '太鹹', '太淡', '難吃', '甜點', '招牌', 'delicious', 'food', 'taste', 'flavor', 'dish', 'dishes', 'tasty', 'cuisine'],
+    '服務態度': ['服務', '態度', '服務生', '店員', '員工', '親切', '周到', '熱情', '專業', '招呼', '接待', '介紹', '解說', 'service', 'staff', 'waiter', 'waitress', 'server', 'friendly', 'attentive'],
+    '環境氛圍': ['環境', '裝潢', '氣氛', '氛圍', '空間', '座位', '包廂', '舒適', '安靜', '吵', '燈光', '佈置', '布置', '復古', '典雅', 'ambiance', 'atmosphere', 'decor', 'interior', 'noisy', 'cozy'],
+    '價格價值': ['價位', '價格', '貴', 'CP', 'cp', '划算', '值得', '物超所值', '平價', '高價', '消費', '便宜', 'CP值', '性價比', 'price', 'expensive', 'pricey', 'value', 'worth', 'overpriced'],
+    '份量': ['份量', '量少', '分量', '吃不飽', '量不多', '縮水', 'portion', 'tiny'],
+    '上菜節奏': ['上菜', '出餐', '等很久', '等了', '太慢', '久等', '節奏', '等候', 'slow service', 'waited'],
+    '訂位候位': ['訂位', '候位', '預約', '排隊', '預訂', '訂席', 'reservation', 'booking', 'booked'],
+    '酒水飲品': ['酒', '調酒', '飲料', '茶', '咖啡', 'wine', 'cocktail', 'drink', 'tea', 'sake'],
+    '米其林與期待落差': ['米其林', '摘星', '必比登', 'Michelin', 'michelin', '落差', '失望', '盛名', '言過其實', 'disappoint'],
+    '衛生與食安': ['衛生', '髒', '蟑螂', '蒼蠅', '異物', '頭髮', '不乾淨', '過敏', '蕁麻疹', '尋麻疹', '拉肚子', '腹瀉', '嘔吐', '食物中毒', 'allergic', 'allergy', 'dirty', 'hair in']
+  };
+  const tagThemes = (t) => Object.keys(THEMES).filter((k) => THEMES[k].some((w) => t.indexOf(w) >= 0));
+  const langOf = (l) => { l = String(l || '').toLowerCase(); return l.startsWith('zh') ? 'zh' : l.startsWith('en') ? 'en' : l.startsWith('ja') ? 'ja' : l.startsWith('ko') ? 'ko' : (l || 'other'); };
+  let STORE = null, TAB = 'ov';
+  let crRef = null, CROWS = [];
+  function compHist() {
+    const hs = dash.data('comp_history');
+    if (hs.status !== 'ok') return null;
+    return hs.data.map((r) => ({ date: String(r.date), name: String(r.name), self: Number(r.self) === 1, rating: r.rating === null ? null : Number(r.rating), count: r.count === null ? null : Number(r.count) }));
+  }
+  const selfName = () => { const H = compHist(); const r = H && H.find((x) => x.self); return r ? r.name : '山海樓'; };
+  const isSelf = () => !STORE || STORE === selfName();
+  function compRows(name) {
+    const st = dash.data('comp_reviews');
+    if (st.status !== 'ok') return null;
+    if (st.data !== crRef) {
+      crRef = st.data;
+      CROWS = st.data.map((r) => ({
+        store: String(r.name), id: String(r.rid), date: String(r.published || r.first_seen || ''), rating: Number(r.rating), lang: langOf(r.lang),
+        hasText: String(r.text || '').trim() !== '', photos: 0, text: String(r.text || ''), themes: tagThemes(String(r.text || ''))
+      }));
+    }
+    return CROWS.filter((r) => r.store === name);
+  }
+  function latestOf(name) {
+    const H = compHist(); if (!H) return null;
+    return H.filter((r) => r.name === name).sort((a, b) => (a.date < b.date ? 1 : -1))[0] || null;
+  }
+
+  /* ---------- 篩選（只有上方篩選列會影響整頁）---------- */
+  function getP() {
+    const p = dash.params() || {};
+    let from = p.from || null, to = p.to || null;
+    if (from && to && from > to) { const t = from; from = to; to = t; }
+    return {
+      from, to,
+      stars: Array.isArray(p.stars) && p.stars.length ? p.stars.map(Number) : null,
+      kw: (p.kw || '').trim()
+    };
+  }
+
+  // 同一套規則套用到每張圖：日期、星等、關鍵字。skip.date 只用於指標卡的「前一期」比較。
+  function filt(rows, p, skip) {
+    skip = skip || {};
+    const kw = p.kw.toLowerCase();
+    return rows.filter((r) => {
+      if (!skip.date) { if (p.from && r.date < p.from) return false; if (p.to && r.date > p.to) return false; }
+      if (p.stars && p.stars.indexOf(r.rating) < 0) return false;
+      if (kw && r.text.toLowerCase().indexOf(kw) < 0) return false;
+      return true;
+    });
+  }
+
+  function stats(a) {
+    const n = a.length;
+    let s = 0, l = 0, t = 0, ph = 0;
+    a.forEach((r) => { s += r.rating; if (r.rating <= 2) l++; if (r.hasText) t++; if (r.photos > 0) ph++; });
+    return { n, avg: n ? s / n : null, low: n ? l / n : null, lown: l, tn: t, pn: ph };
+  }
+
+  const winOf = (p) => (p.from || p.to ? { start: p.from || LO, end: p.to || HI } : null);
+  const isFiltered = (p) => !!(p.from || p.to || p.stars || p.kw);
+
+  function compare(base, win) {
+    if (win) {
+      const len = days(win.start, win.end) + 1;
+      const ps = add(win.start, -len), pe = add(win.start, -1);
+      return {
+        mode: 'win',
+        cur: stats(base.filter((r) => r.date >= win.start && r.date <= win.end)),
+        prev: stats(base.filter((r) => r.date >= ps && r.date <= pe)),
+        label: '前一期（' + ps + ' 至 ' + pe + '）'
+      };
+    }
+    const s12 = add(HI, -365), s24 = add(HI, -730);
+    return {
+      mode: '12',
+      cur: stats(base.filter((r) => r.date > s12)),
+      prev: stats(base.filter((r) => r.date > s24 && r.date <= s12)),
+      label: '前 12 個月'
+    };
+  }
+
+  const set = (o) => dash.setParams(o);
+  const CLEAR = { from: null, to: null, stars: null, kw: null, quarter: null, theme: null, senti: null, sg: null, sb: null };
+  // 每次打開都從全部評論開始
+  set(CLEAR);
+
+  function bindFilters() {
+    const from = $('#gr-from'), to = $('#gr-to'), kw = $('#gr-kw');
+    const onDate = (inp, key) => {
+      inp.addEventListener('change', () => {
+        if (inp.value === '') { set({ [key]: null }); return; }
+        if (!inp.validity.valid) return;
+        const o = { [key]: inp.value };
+        const p = getP(), other = key === 'from' ? p.to : p.from;
+        if (other && ((key === 'from' && inp.value > other) || (key === 'to' && inp.value < other))) { o.from = key === 'from' ? other : inp.value; o.to = key === 'from' ? inp.value : other; }
+        set(o);
+      });
+      inp.addEventListener('blur', () => { const p = getP(); inp.value = p[key] || ''; });
+    };
+    onDate(from, 'from'); onDate(to, 'to');
+    $('#gr-r12').addEventListener('click', () => HI && set({ from: add(HI, -364), to: null }));
+    $('#gr-r3').addEventListener('click', () => HI && set({ from: add(HI, -89), to: null }));
+    $('#gr-rall').addEventListener('click', () => set({ from: null, to: null }));
+    $('#gr-stars').addEventListener('click', (ev) => {
+      const b = ev.target.closest('button[data-star]'); if (!b) return;
+      const p = getP(), s = Number(b.dataset.star);
+      const cur = p.stars ? p.stars.slice() : [];
+      const i = cur.indexOf(s);
+      if (i >= 0) cur.splice(i, 1); else cur.push(s);
+      cur.sort((a, c) => c - a);
+      set({ stars: cur.length && cur.length < 5 ? cur : null });
+    });
+    let timer = null;
+    kw.addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(() => set({ kw: kw.value.trim() || null }), 250); });
+    $('#gr-scope-clear').addEventListener('click', () => set(CLEAR));
+  }
+
+  function scopeText(p, win) {
+    const parts = [];
+    if (win) parts.push(win.start + ' 至 ' + win.end);
+    if (p.stars) parts.push(p.stars.join('、') + ' 星');
+    if (p.kw) parts.push('關鍵字「' + p.kw + '」');
+    return parts.join(' · ');
+  }
+
+  function drawFilters(p, win) {
+    const from = $('#gr-from'), to = $('#gr-to'), kw = $('#gr-kw');
+    from.min = to.min = LO; from.max = to.max = HI;
+    if (document.activeElement !== from) from.value = p.from || '';
+    if (document.activeElement !== to) to.value = p.to || '';
+    if (document.activeElement !== kw) kw.value = p.kw;
+    $$('#gr-stars button[data-star]').forEach((b) => {
+      b.setAttribute('aria-pressed', p.stars && p.stars.indexOf(Number(b.dataset.star)) >= 0 ? 'true' : 'false');
+    });
+    const isRange = (f, t) => p.from === f && p.to === t;
+    $('#gr-r12').setAttribute('aria-pressed', String(isRange(add(HI, -364), null)));
+    $('#gr-r3').setAttribute('aria-pressed', String(isRange(add(HI, -89), null)));
+    $('#gr-rall').setAttribute('aria-pressed', String(!p.from && !p.to));
+
+    const on = isFiltered(p);
+    $('#gr-scope').classList.toggle('on', on);
+    $('#gr-scope-t').textContent = on
+      ? '⚠ 目前只看：' + scopeText(p, win) + '。山海樓的數字、圖表和表格都只算這個範圍（競品比較不受影響）。'
+      : '目前範圍：全部評論（' + LO + ' 至 ' + HI + '）。山海樓的數字、圖表和表格都依這個範圍計算。';
+    $('#gr-scope-clear').hidden = !on;
+  }
+
+  /* ---------- 明細（點圖表後在該處下方展開）---------- */
+  let DETAIL = null; // {slot, id, label, pred}
+  function openDetail(d) {
+    DETAIL = DETAIL && DETAIL.slot === d.slot && DETAIL.id === d.id ? null : d;
+    redraw();
+    if (DETAIL) {
+      const box = root.querySelector('.gr-detail[data-slot="' + DETAIL.slot + '"]');
+      if (box && box.scrollIntoView) box.scrollIntoView({ block: 'nearest' });
+    }
+  }
+  const isSel = (slot, id) => !!DETAIL && DETAIL.slot === slot && DETAIL.id === id;
+
+  function drawDetails(rows, p) {
+    $$('.gr-detail').forEach((box) => {
+      box.replaceChildren();
+      if (!DETAIL || box.dataset.slot !== DETAIL.slot) { box.hidden = true; return; }
+      box.hidden = false;
+      const list = filt(rows, p).filter(DETAIL.pred)
+        .sort((a, b) => (a.date === b.date ? (a.id < b.id ? 1 : -1) : (a.date < b.date ? 1 : -1)));
+      const head = el('div', 'gr-dh');
+      head.appendChild(el('span', 'gr-dtitle', DETAIL.label + '：共 ' + fmtInt(list.length) + ' 則評論' + (isFiltered(p) ? '（已套用上方篩選）' : '')));
+      const close = el('button', 'gr-btn', '收起 ×'); close.type = 'button';
+      close.addEventListener('click', () => { DETAIL = null; redraw(); });
+      head.appendChild(close);
+      box.appendChild(head);
+      if (!list.length) { box.appendChild(el('div', 'gr-none', '這個範圍裡沒有符合的評論。')); return; }
+      const wrap = el('div', 'gr-scroll');
+      const t = el('table', 'gr-table gr-dtable');
+      t.dataset.source = 'reviews sentiment'; t.dataset.rowKey = 'id';
+      const thead = el('thead'), hr = el('tr');
+      [['日期', 'date'], ['星等', 'rating'], ['評論內容', 'text'], ['AI 判讀', 's', 'sentiment'], ['稱讚', 'good', 'sentiment'], ['抱怨', 'bad', 'sentiment']].forEach(([k, f, src]) => {
+        const th = el('th', '', k); th.dataset.field = f; if (src) th.dataset.source = src; hr.appendChild(th);
+      });
+      thead.appendChild(hr); t.appendChild(thead);
+      const tb = el('tbody');
+      list.forEach((r) => {
+        const x = SENT && SENT.get(r.id);
+        const full = r.text, short = full.length > 160 ? full.slice(0, 160) + '…' : full;
+        const tr = document.createElement('tr'); tr.dataset.key = r.id;
+        [r.date, r.rating + ' 星', short, x ? x.s : '', x ? x.goodTxt : '', x ? x.badTxt : ''].forEach((c) => tr.appendChild(el('td', '', c)));
+        if (r.rating <= 2) tr.children[1].classList.add('gr-bad');
+        if (x && x.badTxt) tr.children[5].classList.add('gr-bad');
+        let open = false;
+        tr.addEventListener('click', () => { open = !open; tr.children[2].textContent = open ? full : short; });
+        tb.appendChild(tr);
+      });
+      t.appendChild(tb); wrap.appendChild(t); box.appendChild(wrap);
+    });
+  }
+
+  /* ---------- 標題句與指標卡 ---------- */
+  function setKpi(id, big, nodes) {
+    const c = $(id);
+    c.querySelector('[data-role=big]').textContent = big;
+    const sub = c.querySelector('[data-role=sub]'); sub.replaceChildren();
+    nodes.forEach((n) => sub.appendChild(typeof n === 'string' ? document.createTextNode(n) : n));
+  }
+  const colored = (txt, cls) => el('span', cls, txt);
+
+  function drawHeaderAndKpi(rows, p, win) {
+    if (!isSelf()) { drawCompKpi(rows, p, win); return; }
+    const all = stats(filt(rows, p));
+    const base = filt(rows, p, { date: 1 });
+    const cmp = compare(base, win);
+    const take = $('#gr-take');
+    if (!all.n) {
+      take.textContent = '目前的篩選條件下沒有符合的評論，請按上方「清除篩選」。';
+    } else {
+      let t = (isFiltered(p) ? scopeText(p, win) : '全部評論') + '：共 ' + fmtInt(all.n) + ' 則評論，平均 ' + f2(all.avg) + ' 星，1–2 星占 ' + pc(all.low) + '。';
+      if (cmp.mode === '12' && cmp.cur.n && cmp.prev.n) t += '近 12 個月平均 ' + f2(cmp.cur.avg) + ' 星，' + cmp.label + '為 ' + f2(cmp.prev.avg) + ' 星。';
+      take.textContent = t;
+    }
+    $('#gr-sub').textContent = '全部資料：' + LO + ' 至 ' + HI + ' · 來源：Google 商家檔案（已移除留言者姓名）';
+
+    const dAvg = cmp.cur.avg !== null && cmp.prev.avg !== null ? Math.round((cmp.cur.avg - cmp.prev.avg) * 100) / 100 : null;
+    const dLow = cmp.cur.low !== null && cmp.prev.low !== null ? cmp.cur.low - cmp.prev.low : null;
+    const dN = cmp.cur.n - cmp.prev.n;
+    setKpi('#gr-k-n', fmtInt(all.n), cmp.mode === 'win'
+      ? [cmp.label + ' ' + fmtInt(cmp.prev.n) + ' 則（' + sgn(dN, String) + '）']
+      : ['近 12 個月 ' + fmtInt(cmp.cur.n) + ' 則；前 12 個月 ' + fmtInt(cmp.prev.n) + ' 則（' + sgn(dN, String) + '）']);
+    setKpi('#gr-k-avg', f2(all.avg), [
+      (cmp.mode === 'win' ? cmp.label + ' ' + f2(cmp.prev.avg) : '近 12 個月 ' + f2(cmp.cur.avg) + '；前 12 個月 ' + f2(cmp.prev.avg)),
+      dAvg === null ? '' : '（', dAvg === null ? '' : colored(sgn(dAvg, (x) => x.toFixed(2)), dAvg === 0 ? '' : dAvg > 0 ? 'gr-ok' : 'gr-bad'), dAvg === null ? '' : '）'
+    ]);
+    setKpi('#gr-k-low', pc(all.low), [
+      fmtInt(all.lown) + ' 則；' + (cmp.mode === 'win' ? cmp.label + ' ' + pc(cmp.prev.low) : '近 12 個月 ' + pc(cmp.cur.low) + '；前 12 個月 ' + pc(cmp.prev.low)),
+      dLow === null ? '' : '（', dLow === null ? '' : colored(sgn(dLow, (x) => (x * 100).toFixed(1) + '%'), dLow === 0 ? '' : dLow < 0 ? 'gr-ok' : 'gr-bad'), dLow === null ? '' : '）'
+    ]);
+    setKpi('#gr-k-text', fmtInt(all.tn), ['占目前範圍 ' + pc(all.n ? all.tn / all.n : null)]);
+    setKpi('#gr-k-photo', pc(all.n ? all.pn / all.n : null), [fmtInt(all.pn) + ' 則附照片']);
+  }
+
+  function drawCompKpi(rows, p, win) {
+    const g = latestOf(STORE) || {};
+    const a = filt(rows, p);
+    const s = stats(a);
+    $('#gr-take').textContent = STORE + '：Google 地圖平均 ' + (g.rating == null ? '—' : g.rating.toFixed(1)) + ' 星，共 ' + (g.count == null ? '—' : fmtInt(g.count)) + ' 則評論（' + (g.date || '') + '）。以下分析根據 ' + fmtInt(rows.length) + ' 則評論樣本' + (isFiltered(p) ? '，篩選後剩 ' + fmtInt(s.n) + ' 則' : '') + '。';
+    $('#gr-sub').textContent = '樣本日期：' + (LO || '—') + ' 至 ' + (HI || '—') + ' · 來源：Google 地圖（Places API，每天最多 5 則評論；未保存留言者姓名）';
+    setKpi('#gr-k-n', g.count == null ? '—' : fmtInt(g.count), ['Google 上的評論總數；本頁分析用的樣本 ' + fmtInt(rows.length) + ' 則']);
+    setKpi('#gr-k-avg', g.rating == null ? '—' : g.rating.toFixed(1), ['Google 上的平均星等（只提供到小數一位）；樣本平均 ' + f2(s.avg)]);
+    setKpi('#gr-k-low', pc(s.low), ['依樣本 ' + fmtInt(s.n) + ' 則計算，僅供參考']);
+    setKpi('#gr-k-text', fmtInt(s.tn), ['樣本中有文字的評論']);
+    setKpi('#gr-k-photo', '—', ['Google 未提供這家店的照片資訊']);
+  }
+
+  const naBox = (box, msg) => { box.replaceChildren(); box.appendChild(el('div', 'gr-na', msg)); };
+
+  /* ---------- 每季圖 ---------- */
+  function drawQuarterly(rows, p, win) {
+    const box = $('#gr-q'); box.replaceChildren();
+    if (!isSelf()) { naBox(box, 'Google 未提供這家店過去的評論，無法做每季趨勢。星等與評論數的每日變化請看「總覽」的每日趨勢。'); return; }
+    $('#gr-sw-line').style.background = dash.colors[0];
+    const base = filt(rows, p);
+    const g = {};
+    base.forEach((r) => { (g[qOf(r.date)] = g[qOf(r.date)] || []).push(r.rating); });
+    const qStart = win ? qOf(win.start) : '2018 Q1', qEnd = win ? qOf(win.end) : qOf(HI);
+    const quarters = [];
+    for (let y = Number(qStart.slice(0, 4)); y <= Number(qEnd.slice(0, 4)); y++) for (let k = 1; k <= 4; k++) { const q = y + ' Q' + k; if (q >= qStart && q <= qEnd) quarters.push(q); }
+    const data = quarters.map((q) => {
+      const a = g[q] || [], b = qBounds(q);
+      return { q, n: a.length, avg: a.length ? a.reduce((x, s) => x + s, 0) / a.length : null, low: a.length ? a.filter((s) => s <= 2).length / a.length : null, from: b.from, to: b.to };
+    });
+    if (!data.some((r) => r.n > 0)) { box.appendChild(el('div', 'gr-empty', '這個範圍裡沒有評論。')); return; }
+    const W = Math.max(300, box.clientWidth), H = W < 520 ? 280 : 340;
+    const m = { t: 30, r: 46, b: 34, l: 48 };
+    const svg = d3.select(box).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', '每季評論數與平均星等');
+    const x = d3.scaleBand(data.map((r) => r.q), [m.l, W - m.r]).padding(0.25);
+    const yN = d3.scaleLinear([0, d3.max(data, (r) => r.n) * 1.1 || 1], [H - m.b, m.t]).nice();
+    const avgs = data.filter((r) => r.avg !== null).map((r) => r.avg);
+    const lo = Math.min(3, Math.floor(d3.min(avgs) * 2) / 2);
+    const yA = d3.scaleLinear([lo, 5], [H - m.b, m.t]);
+
+    yN.ticks(4).forEach((t) => {
+      svg.append('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', yN(t)).attr('y2', yN(t)).style('stroke', 'var(--cds-chart-grid)');
+      svg.append('text').attr('x', m.l - 6).attr('y', yN(t) + 4).attr('text-anchor', 'end').attr('font-size', 14).style('fill', 'var(--color-fg-muted)').text(fmtInt(t));
+    });
+    d3.range(Math.ceil(lo), 6).forEach((t) => {
+      svg.append('text').attr('x', W - m.r + 6).attr('y', yA(t) + 4).attr('font-size', 14).style('fill', dash.colors[0]).text(t.toFixed(1));
+    });
+    svg.append('text').attr('x', m.l).attr('y', 14).attr('font-size', 14).style('fill', 'var(--color-fg-muted)').text('評論數');
+    svg.append('text').attr('x', W - m.r).attr('y', 14).attr('text-anchor', 'end').attr('font-size', 14).style('fill', dash.colors[0]).text('平均星等');
+
+    const baseOp = (r) => (isSel('q', r.q) ? 1 : 0.7);
+    const bars = svg.append('g').selectAll('rect').data(data).join('rect')
+      .attr('x', (r) => x(r.q)).attr('width', x.bandwidth()).attr('y', (r) => yN(r.n)).attr('height', (r) => yN(0) - yN(r.n)).attr('rx', 3)
+      .style('fill', 'var(--cds-chart-muted)').style('opacity', baseOp)
+      .style('stroke', (r) => (isSel('q', r.q) ? dash.colors[0] : 'none')).attr('stroke-width', 2);
+
+    // 年份標籤：依寬度挑選間隔，避免重疊
+    const years = Array.from(new Set(data.map((r) => r.q.slice(0, 4))));
+    const perYear = x.step() * 4;
+    const step = perYear >= 44 ? 1 : perYear >= 22 ? 2 : 3;
+    years.forEach((y, i) => {
+      if (i % step !== 0) return;
+      const first = data.find((r) => r.q.startsWith(y));
+      svg.append('text').attr('x', x(first.q)).attr('y', H - 10).attr('font-size', 14).style('fill', 'var(--color-fg-muted)').text(y);
+    });
+
+    const cx = (r) => x(r.q) + x.bandwidth() / 2;
+    const line = d3.line().defined((r) => r.avg !== null).x(cx).y((r) => yA(r.avg));
+    svg.append('path').attr('d', line(data)).attr('fill', 'none').style('stroke', dash.colors[0]).attr('stroke-width', 2).attr('stroke-linecap', 'round').attr('stroke-linejoin', 'round');
+    const withAvg = data.filter((r) => r.avg !== null);
+    const last = withAvg[withAvg.length - 1];
+    svg.append('circle').attr('r', 4).attr('cx', cx(last)).attr('cy', yA(last.avg)).style('fill', dash.colors[0]);
+    svg.append('text').attr('x', cx(last)).attr('y', yA(last.avg) - 10).attr('text-anchor', 'end').attr('font-size', 14).style('fill', dash.colors[0]).text(last.avg.toFixed(2));
+
+    const tip = el('div', 'gr-tip'); tip.hidden = true; box.appendChild(tip);
+    const hover = svg.append('circle').attr('r', 5).attr('fill', 'none').attr('stroke-width', 2).style('stroke', dash.colors[0]).attr('visibility', 'hidden');
+    const idxAt = (ev) => Math.max(0, Math.min(data.length - 1, Math.floor((d3.pointer(ev, svg.node())[0] - m.l) / x.step())));
+    svg.append('rect').attr('class', 'gr-hit').attr('x', m.l).attr('y', m.t).attr('width', W - m.l - m.r).attr('height', H - m.t - m.b).attr('fill', 'transparent')
+      .on('pointermove', (ev) => {
+        const r = data[idxAt(ev)];
+        bars.style('opacity', (d) => (d === r ? 1 : 0.45));
+        if (r.avg !== null) hover.attr('cx', cx(r)).attr('cy', yA(r.avg)).attr('visibility', 'visible'); else hover.attr('visibility', 'hidden');
+        tip.replaceChildren();
+        tip.appendChild(el('div', 'gr-tt', r.q + '（點一下看這一季的評論）'));
+        [['評論數', fmtInt(r.n), 'var(--cds-chart-muted)'], ['平均星等', f2(r.avg), dash.colors[0]], ['1–2 星占比', pc(r.low), null]].forEach(([k, v, c]) => {
+          const d = el('div');
+          if (c) { const s = el('i', 'gr-sw'); s.style.background = c; d.appendChild(s); }
+          d.appendChild(document.createTextNode(k + '　' + v));
+          tip.appendChild(d);
+        });
+        tip.hidden = false;
+        const tw = tip.offsetWidth, bw = box.clientWidth;
+        tip.style.left = Math.max(0, Math.min(bw - tw, cx(r) * (bw / W) - tw / 2)) + 'px';
+      })
+      .on('pointerleave', () => { tip.hidden = true; hover.attr('visibility', 'hidden'); bars.style('opacity', baseOp); })
+      .on('click', (ev) => {
+        const r = data[idxAt(ev)];
+        openDetail({ slot: 'q', id: r.q, label: r.q + '（' + r.from + ' 至 ' + r.to + '）', pred: (x) => x.date >= r.from && x.date <= r.to });
+      });
+  }
+
+  /* ---------- 星等占比 ---------- */
+  function drawDist(rows, p) {
+    const box = $('#gr-dist'); box.replaceChildren();
+    const stack = $('#gr-dist-stack'); stack.replaceChildren();
+    if (!isSelf()) { naBox(box, 'Google 未提供這家店的星等分布（各星等各有幾則）。'); return; }
+    const a = filt(rows, p);
+    const total = a.length;
+    const cnt = [5, 4, 3, 2, 1].map((s) => ({ star: s, n: a.filter((r) => r.rating === s).length }));
+    const mx = d3.max(cnt, (r) => r.n) || 1;
+    const starColor = (s) => (s <= 2 ? 'var(--cds-chart-status-critical)' : s === 3 ? 'var(--cds-chart-muted)' : s === 4 ? dash.colors[1] : dash.colors[0]);
+    const open = (s) => openDetail({ slot: 'dist', id: 's' + s, label: s + ' 星', pred: (r) => r.rating === s });
+    cnt.forEach((r) => {
+      if (!total || !r.n) return;
+      const seg = el('div'); seg.style.width = (r.n / total * 100) + '%'; seg.style.background = starColor(r.star);
+      seg.title = r.star + ' 星 ' + pc(r.n / total) + '（點一下看這些評論）';
+      seg.addEventListener('click', () => open(r.star));
+      stack.appendChild(seg);
+    });
+    cnt.forEach((r) => {
+      const row = el('div', 'gr-dr' + (isSel('dist', 's' + r.star) ? ' sel' : ''));
+      row.appendChild(el('div', 'gr-dl', r.star + ' 星'));
+      const tr = el('div', 'gr-dt'), f = el('div', 'gr-df');
+      f.style.width = (r.n / mx * 100) + '%';
+      f.style.background = starColor(r.star);
+      tr.appendChild(f); row.appendChild(tr);
+      row.appendChild(el('div', 'gr-dv', pc(total ? r.n / total : null) + '（' + fmtInt(r.n) + ' 則）'));
+      row.addEventListener('click', () => open(r.star));
+      box.appendChild(row);
+    });
+  }
+
+  /* ---------- 好評與負評 ---------- */
+  const SKINDS = ['正面', '混合', '負面', '中立'];
+  const sColor = (k) => (k === '正面' ? dash.colors[0] : k === '混合' ? dash.colors[1] : k === '負面' ? 'var(--cds-chart-status-critical)' : 'var(--cds-chart-muted)');
+  function sentiState(status) {
+    ['#gr-senti-stack', '#gr-senti-rows', '#gr-good', '#gr-bad'].forEach((id) => {
+      const b = $(id); b.replaceChildren(); b.classList.toggle('dash-skeleton', status === 'loading');
+      if (status !== 'ok' && status !== 'loading' && id !== '#gr-senti-stack') {
+        const w = el('div', 'gr-state on'); w.appendChild(el('span', 'gr-dot')); w.appendChild(el('span', '', 'Failed to load')); b.appendChild(w);
+      }
+    });
+    $('#gr-senti-pending').textContent = '';
+  }
+  function barRow(box, label, n, share, color, selected, onClick) {
+    const row = el('div', 'gr-sr' + (selected ? ' sel' : ''));
+    row.appendChild(el('div', '', label));
+    const tr = el('div', 'gr-dt'), f = el('div', 'gr-df');
+    f.style.width = (share * 100) + '%'; f.style.background = color;
+    tr.appendChild(f); row.appendChild(tr);
+    row.appendChild(el('div', 'gr-dv', pc(share) + '（' + fmtInt(n) + ' 則）'));
+    row.addEventListener('click', onClick);
+    box.appendChild(row);
+  }
+  function drawSentiment(rows, p) {
+    const st = dash.data(isSelf() ? 'sentiment' : 'comp_sentiment');
+    sentiState(st.status);
+    if (st.status !== 'ok' || !SENT) return;
+    const base = filt(rows, p).filter((r) => r.hasText);
+    const done = base.filter((r) => SENT.has(r.id));
+    const n = done.length, pending = base.length - n;
+    $('#gr-senti-pending').textContent = (n ? '已判讀 ' + fmtInt(n) + ' 則有文字的評論。' : '這個範圍裡沒有已判讀的評論。') + (pending ? '另有 ' + fmtInt(pending) + ' 則新評論尚未判讀，會在下次每日排程時補上。' : '');
+    const cnt = {}; SKINDS.forEach((k) => { cnt[k] = 0; });
+    const g = {}, b = {};
+    done.forEach((r) => {
+      const x = SENT.get(r.id);
+      cnt[x.s] = (cnt[x.s] || 0) + 1;
+      x.good.forEach((c) => { g[c] = (g[c] || 0) + 1; });
+      x.bad.forEach((c) => { b[c] = (b[c] || 0) + 1; });
+    });
+    const stack = $('#gr-senti-stack'), list = $('#gr-senti-rows');
+    SKINDS.forEach((k) => {
+      if (!n) return;
+      const open = () => openDetail({ slot: 'senti', id: k, label: '整體評價：' + k, pred: (r) => { const x = SENT.get(r.id); return !!x && x.s === k; } });
+      if (cnt[k]) {
+        const seg = el('div'); seg.style.width = (cnt[k] / n * 100) + '%'; seg.style.background = sColor(k);
+        seg.title = k + ' ' + pc(cnt[k] / n) + '（點一下看這些評論）'; seg.addEventListener('click', open); stack.appendChild(seg);
+      }
+      barRow(list, k, cnt[k], cnt[k] / n, sColor(k), isSel('senti', k), open);
+    });
+    const draw = (sel, m, color, kind) => {
+      const box = $(sel);
+      const ks = Object.keys(m).sort((x, y) => m[y] - m[x]);
+      if (!ks.length) { box.appendChild(el('div', 'gr-empty', '這個範圍裡沒有資料。')); return; }
+      ks.forEach((c) => barRow(box, c, m[c], m[c] / n, color, isSel('gb', kind + c), () => openDetail({
+        slot: 'gb', id: kind + c, label: (kind === 'g' ? '稱讚：' : '抱怨：') + c,
+        pred: (r) => { const x = SENT.get(r.id); return !!x && (kind === 'g' ? x.good : x.bad).indexOf(c) >= 0; }
+      })));
+    };
+    draw('#gr-good', g, dash.colors[0], 'g');
+    draw('#gr-bad', b, 'var(--cds-chart-status-critical)', 'b');
+  }
+
+  /* ---------- 表格共用 ---------- */
+  function body(tableSel) { const tb = $(tableSel).querySelector('tbody'); tb.replaceChildren(); return tb; }
+  function addRow(tb, cells, onClick, selected) {
+    const tr = document.createElement('tr');
+    cells.forEach((c) => tr.appendChild(el('td', '', c)));
+    if (selected) tr.classList.add('sel');
+    if (onClick) tr.addEventListener('click', onClick);
+    tb.appendChild(tr); return tr;
+  }
+  function emptyRow(tb, n) { const tr = document.createElement('tr'); const td = el('td', 'gr-none', '這個範圍裡沒有評論。請調整或清除上方篩選。'); td.colSpan = n; tr.appendChild(td); tb.appendChild(tr); }
+
+  function drawYears(rows, p) {
+    const tb = body('#gr-years');
+    if (!isSelf()) { const tr = document.createElement('tr'); const td = el('td', 'gr-none', 'Google 未提供這家店過去的評論，無法做逐年比較。'); td.colSpan = 4; tr.appendChild(td); tb.appendChild(tr); return; }
+    const base = filt(rows, p), g = {};
+    base.forEach((r) => { const y = r.date.slice(0, 4); (g[y] = g[y] || []).push(r); });
+    const ys = Object.keys(g).sort().reverse();
+    if (!ys.length) { emptyRow(tb, 4); return; }
+    ys.forEach((y) => {
+      const s = stats(g[y]);
+      addRow(tb, [y, fmtInt(s.n), f2(s.avg), pc(s.low)],
+        () => openDetail({ slot: 'years', id: y, label: y + ' 年', pred: (r) => r.date.slice(0, 4) === y }), isSel('years', y));
+    });
+  }
+
+  function drawThemes(rows, p) {
+    const tb = body('#gr-themes');
+    const txt = filt(rows, p).filter((r) => r.hasText);
+    if (!txt.length) { emptyRow(tb, 6); return; }
+    const baseAvg = txt.reduce((x, r) => x + r.rating, 0) / txt.length;
+    const g = {};
+    txt.forEach((r) => r.themes.forEach((t) => { (g[t] = g[t] || []).push(r.rating); }));
+    Object.keys(g).map((t) => {
+      const a = g[t], avg = a.reduce((x, s) => x + s, 0) / a.length;
+      return { t, n: a.length, share: a.length / txt.length, avg, gap: avg - baseAvg, low: a.filter((s) => s <= 2).length / a.length };
+    }).sort((x, y) => y.n - x.n).forEach((r) => {
+      const tr = addRow(tb, [r.t, fmtInt(r.n), pc(r.share), f2(r.avg), sgn(Math.round(r.gap * 100) / 100, (x) => x.toFixed(2)), pc(r.low)],
+        () => openDetail({ slot: 'themes', id: r.t, label: '主題：' + r.t, pred: (x) => x.hasText && x.themes.indexOf(r.t) >= 0 }), isSel('themes', r.t));
+      tr.children[4].classList.add(r.gap <= -0.2 ? 'gr-bad' : r.gap >= 0.1 ? 'gr-ok' : 'gr-none');
+    });
+  }
+
+  function drawLang(rows, p) {
+    const tb = body('#gr-lang');
+    const txt = filt(rows, p).filter((r) => r.hasText);
+    if (!txt.length) { emptyRow(tb, 4); return; }
+    const M = { zh: '中文', en: '英文', ja: '日文', ko: '韓文' }, g = {};
+    txt.forEach((r) => { const k = M[r.lang] || '其他'; (g[k] = g[k] || []).push(r.rating); });
+    Object.keys(g).map((k) => ({ k, n: g[k].length, avg: g[k].reduce((x, s) => x + s, 0) / g[k].length }))
+      .sort((x, y) => y.n - x.n)
+      .forEach((r) => addRow(tb, [r.k, fmtInt(r.n), pc(r.n / txt.length), f2(r.avg)]));
+  }
+
+  /* ---------- 個別評論列表（全部顯示，可單獨篩選日期與星等）---------- */
+  const LF = { from: null, to: null, stars: [] };
+  let lastRows = null;
+  const lfOn = () => !!(LF.from || LF.to || LF.stars.length);
+  function lfPass(r) {
+    let f = LF.from, t = LF.to;
+    if (f && t && f > t) { const x = f; f = t; t = x; }
+    if (f && r.date < f) return false;
+    if (t && r.date > t) return false;
+    if (LF.stars.length && LF.stars.indexOf(r.rating) < 0) return false;
+    return true;
+  }
+  function bindListFilters() {
+    const lf = $('#gr-lf-from'), lt = $('#gr-lf-to');
+    const redrawList = () => { if (lastRows) drawList(lastRows, getP()); };
+    [[lf, 'from'], [lt, 'to']].forEach(([inp, key]) => {
+      inp.addEventListener('change', () => {
+        if (inp.value === '') LF[key] = null;
+        else if (inp.validity.valid) LF[key] = inp.value;
+        else return;
+        redrawList();
+      });
+    });
+    $('#gr-lf-stars').addEventListener('click', (ev) => {
+      const b = ev.target.closest('button[data-star]'); if (!b) return;
+      const s = Number(b.dataset.star), i = LF.stars.indexOf(s);
+      if (i >= 0) LF.stars.splice(i, 1); else LF.stars.push(s);
+      redrawList();
+    });
+    $('#gr-lf-clear').addEventListener('click', () => { LF.from = null; LF.to = null; LF.stars = []; redrawList(); });
+  }
+  function drawList(rows, p) {
+    lastRows = rows;
+    const lf = $('#gr-lf-from'), lt = $('#gr-lf-to');
+    lf.min = lt.min = LO; lf.max = lt.max = HI;
+    if (document.activeElement !== lf) lf.value = LF.from || '';
+    if (document.activeElement !== lt) lt.value = LF.to || '';
+    $$('#gr-lf-stars button[data-star]').forEach((b) => b.setAttribute('aria-pressed', LF.stars.indexOf(Number(b.dataset.star)) >= 0 ? 'true' : 'false'));
+    $('#gr-lf').classList.toggle('on', lfOn());
+    $('#gr-lf-clear').hidden = !lfOn();
+    const tb = body('#gr-list');
+    const listRows = filt(rows, p).filter(lfPass).slice().sort((a, b) => (a.date === b.date ? (a.id < b.id ? 1 : -1) : (a.date < b.date ? 1 : -1)));
+    if (!listRows.length) emptyRow(tb, 8);
+    listRows.forEach((r) => {
+      const full = r.text, short = full.length > 140 ? full.slice(0, 140) + '…' : full;
+      const x = SENT && SENT.get(r.id);
+      const tr = addRow(tb, [r.date, r.rating + ' 星', r.themes.join('、'), short, r.id, x ? x.s : (r.hasText && SENT ? '尚未判讀' : ''), x ? x.goodTxt : '', x ? x.badTxt : '']);
+      tr.dataset.key = r.id;
+      if (x && x.badTxt) tr.children[7].classList.add('gr-bad');
+      if (r.rating <= 2) tr.children[1].classList.add('gr-bad');
+      let open = false;
+      tr.addEventListener('click', () => { open = !open; tr.children[3].textContent = open ? full : short; });
+    });
+    const lfTxt = [];
+    if (LF.from || LF.to) lfTxt.push((LF.from || LO) + ' 至 ' + (LF.to || HI));
+    if (LF.stars.length) lfTxt.push(LF.stars.slice().sort((a, b) => b - a).join('、') + ' 星');
+    const cnt = $('#gr-list-count');
+    cnt.classList.toggle('gr-lcount-on', lfOn());
+    cnt.textContent = (lfOn() ? '⚠ 列表只看：' + lfTxt.join(' · ') + '。' : '') + '共 ' + fmtInt(listRows.length) + ' 則' + (isFiltered(p) ? '（也套用了上方篩選）' : '') + '，全部列在下面；由新到舊排列，表格可上下捲動，點一列可展開全文。';
+  }
+
+  /* ---------- 競品比較（不套用上方篩選）---------- */
+  let CMETRIC = 'rating', CPICK = null;
+  function bindComp() {
+    $('#gr-comp-metric').addEventListener('click', (ev) => {
+      const b = ev.target.closest('button[data-m]'); if (!b) return;
+      CMETRIC = b.dataset.m; drawComp();
+    });
+    $('#gr-comp-pick').addEventListener('change', (ev) => { CPICK = ev.target.value || null; drawComp(); });
+    $('#gr-comp-rank').addEventListener('click', (ev) => { const tr = ev.target.closest('tr[data-key]'); if (tr) goStore(tr.dataset.key); });
+    $('#gr-ov-senti').addEventListener('click', (ev) => { const tr = ev.target.closest('tr[data-key]'); if (tr) goStore(tr.dataset.key); });
+  }
+  function compFail(sel, st) {
+    const b = $(sel); b.replaceChildren(); b.classList.toggle('dash-skeleton', st === 'loading');
+    if (st !== 'loading') { const w = el('div', 'gr-state on'); w.appendChild(el('span', 'gr-dot')); w.appendChild(el('span', '', 'Failed to load')); b.appendChild(w); }
+  }
+  function drawComp() {
+    const hs = dash.data('comp_history');
+    const tb = $('#gr-comp-rank tbody');
+    if (hs.status !== 'ok') { tb.replaceChildren(); compFail('#gr-comp-trend', hs.status); $('#gr-comp-asof').textContent = ''; }
+    else {
+      $('#gr-comp-trend').classList.remove('dash-skeleton');
+      const H = hs.data.map((r) => ({ date: String(r.date), name: String(r.name), self: Number(r.self) === 1, rating: r.rating === null ? null : Number(r.rating), count: r.count === null ? null : Number(r.count) }));
+      const dates = Array.from(new Set(H.map((r) => r.date))).sort();
+      const last = dates[dates.length - 1];
+      const ago = add(last, -7);
+      const names = Array.from(new Set(H.map((r) => r.name)));
+      const at = (n, d) => H.find((r) => r.name === n && r.date === d);
+      const before = (n) => H.filter((r) => r.name === n && r.date <= ago).sort((a, b) => (a.date < b.date ? 1 : -1))[0];
+      const cur = names.map((n) => at(n, last)).filter(Boolean).sort((a, b) => (b.rating - a.rating) || (b.count - a.count));
+      $('#gr-comp-asof').textContent = '資料日期：' + last + '（從 ' + dates[0] + ' 開始記錄，共 ' + dates.length + ' 天）。依平均星等排序，同分時評論數多者在前。';
+      tb.replaceChildren();
+      const mx = d3.max(cur, (r) => r.rating) || 5;
+      cur.forEach((r, i) => {
+        const tr = document.createElement('tr'); if (r.self) tr.classList.add('me'); tr.dataset.key = r.name;
+        tr.appendChild(el('td', '', String(i + 1)));
+        tr.appendChild(el('td', '', r.name + (r.self ? '（我們）' : '')));
+        const td = el('td'); const w = el('div', 'gr-cbar'); const bar = el('i');
+        bar.style.width = ((r.rating - 3) / (mx - 3 || 1) * 6 + 0.5) + 'rem';
+        bar.style.background = r.self ? dash.colors[0] : 'var(--cds-chart-muted)';
+        w.appendChild(bar); w.appendChild(el('span', '', r.rating === null ? '—' : r.rating.toFixed(1))); td.appendChild(w); tr.appendChild(td);
+        tr.appendChild(el('td', '', r.count === null ? '—' : fmtInt(r.count)));
+        const b = before(r.name);
+        const dc = b && r.count !== null && b.count !== null ? r.count - b.count : null;
+        const dr = b && r.rating !== null && b.rating !== null ? Math.round((r.rating - b.rating) * 10) / 10 : null;
+        tr.appendChild(el('td', dc === null ? 'gr-none' : '', dc === null ? '累積中' : sgn(dc, fmtInt)));
+        const tdr = el('td', dr === null ? 'gr-none' : dr > 0 ? 'gr-ok' : dr < 0 ? 'gr-bad' : '', dr === null ? '累積中' : sgn(dr, (x) => x.toFixed(1)));
+        tr.appendChild(tdr);
+        tb.appendChild(tr);
+      });
+      // 對照選單
+      const pick = $('#gr-comp-pick');
+      const others = names.filter((n) => !H.find((r) => r.name === n && r.self));
+      if (pick.options.length !== others.length + 1) {
+        pick.replaceChildren(new Option('（不選）', ''), ...others.map((n) => new Option(n, n)));
+      }
+      pick.value = CPICK || '';
+      $$('#gr-comp-metric button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.m === CMETRIC)));
+      drawCompTrend(H, dates, names);
+    }
+  }
+  function drawCompTrend(H, dates, names) {
+    const box = $('#gr-comp-trend'); box.replaceChildren();
+    if (dates.length < 2) { box.appendChild(el('div', 'gr-empty', '目前只有 ' + dates[0] + ' 一天的資料，累積到兩天以上就會顯示趨勢線。')); return; }
+    const W = Math.max(300, box.clientWidth), Hh = W < 520 ? 280 : 340;
+    const m = { t: 20, r: 130, b: 34, l: 56 };
+    const xs = d3.scaleUtc(d3.extent(dates, (d) => new Date(d + 'T00:00:00Z')), [m.l, W - m.r]);
+    const vals = H.map((r) => r[CMETRIC]).filter((v) => v !== null);
+    const lo = d3.min(vals), hi = d3.max(vals);
+    const pad = CMETRIC === 'rating' ? 0.1 : Math.max(5, (hi - lo) * 0.05);
+    const ys = d3.scaleLinear([lo - pad, hi + pad], [Hh - m.b, m.t]).nice();
+    const svg = d3.select(box).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${Hh}`).attr('role', 'img').attr('aria-label', '競品每日趨勢');
+    const fmtY = CMETRIC === 'rating' ? (v) => v.toFixed(1) : fmtInt;
+    ys.ticks(5).forEach((t) => {
+      svg.append('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', ys(t)).attr('y2', ys(t)).style('stroke', 'var(--cds-chart-grid)');
+      svg.append('text').attr('x', m.l - 6).attr('y', ys(t) + 5).attr('text-anchor', 'end').attr('font-size', 14).style('fill', 'var(--color-fg-muted)').text(fmtY(t));
+    });
+    const nT = Math.max(2, Math.min(dates.length, Math.floor((W - m.l - m.r) / 90)));
+    xs.ticks(nT).forEach((t) => {
+      svg.append('text').attr('x', xs(t)).attr('y', Hh - 10).attr('text-anchor', 'middle').attr('font-size', 14).style('fill', 'var(--color-fg-muted)').text(d3.utcFormat('%m/%d')(t));
+    });
+    const selfName = (H.find((r) => r.self) || {}).name;
+    const order = names.slice().sort((a, b) => (a === selfName || a === CPICK) - (b === selfName || b === CPICK));
+    const color = (n) => (n === selfName ? dash.colors[0] : n === CPICK ? dash.colors[1] : 'var(--cds-chart-muted)');
+    const line = d3.line().defined((r) => r[CMETRIC] !== null).x((r) => xs(new Date(r.date + 'T00:00:00Z'))).y((r) => ys(r[CMETRIC]));
+    const labels = [];
+    order.forEach((n) => {
+      const rows = H.filter((r) => r.name === n).sort((a, b) => (a.date < b.date ? -1 : 1));
+      const hl = n === selfName || n === CPICK;
+      svg.append('path').attr('d', line(rows)).attr('fill', 'none').style('stroke', color(n)).attr('stroke-width', hl ? 2.5 : 1.2).style('opacity', hl ? 1 : 0.55).attr('stroke-linecap', 'round').attr('stroke-linejoin', 'round');
+      const lastR = rows.filter((r) => r[CMETRIC] !== null).pop();
+      if (hl && lastR) labels.push({ n, y: ys(lastR[CMETRIC]), x: xs(new Date(lastR.date + 'T00:00:00Z')), v: lastR[CMETRIC] });
+    });
+    labels.sort((a, b) => a.y - b.y);
+    for (let i = 1; i < labels.length; i++) if (labels[i].y - labels[i - 1].y < 18) labels[i].y = labels[i - 1].y + 18;
+    labels.forEach((l) => svg.append('text').attr('x', l.x + 8).attr('y', l.y + 5).attr('font-size', 14).style('fill', color(l.n)).text(l.n + ' ' + fmtY(l.v)));
+    const tip = el('div', 'gr-tip'); tip.hidden = true; box.appendChild(tip);
+    const rule = svg.append('line').attr('y1', m.t).attr('y2', Hh - m.b).style('stroke', 'var(--cds-chart-reference)').attr('visibility', 'hidden');
+    svg.append('rect').attr('x', m.l).attr('y', m.t).attr('width', W - m.l - m.r).attr('height', Hh - m.t - m.b).attr('fill', 'transparent')
+      .on('pointermove', (ev) => {
+        const xd = xs.invert(d3.pointer(ev, svg.node())[0]);
+        const d = dates.reduce((best, x) => (Math.abs(new Date(x + 'T00:00:00Z') - xd) < Math.abs(new Date(best + 'T00:00:00Z') - xd) ? x : best), dates[0]);
+        const px = xs(new Date(d + 'T00:00:00Z'));
+        rule.attr('x1', px).attr('x2', px).attr('visibility', 'visible');
+        tip.replaceChildren(); tip.appendChild(el('div', 'gr-tt', d));
+        H.filter((r) => r.date === d && r[CMETRIC] !== null).sort((a, b) => b[CMETRIC] - a[CMETRIC]).forEach((r) => {
+          const row = el('div'); const s = el('i', 'gr-sw'); s.style.background = color(r.name); row.appendChild(s);
+          row.appendChild(document.createTextNode(r.name + '　' + fmtY(r[CMETRIC]))); tip.appendChild(row);
+        });
+        tip.hidden = false;
+        const bw = box.clientWidth, tw = tip.offsetWidth;
+        tip.style.left = Math.max(0, Math.min(bw - tw, px * (bw / W) + 12)) + 'px';
+      })
+      .on('pointerleave', () => { tip.hidden = true; rule.attr('visibility', 'hidden'); });
+  }
+  /* ---------- 總覽 ---------- */
+  function drawOverview() {
+    const H = compHist();
+    const take = $('#gr-ov-take');
+    if (!H) { take.textContent = ''; ['#gr-ov-k1', '#gr-ov-k2', '#gr-ov-k3', '#gr-ov-k4'].forEach((id) => setKpi(id, '—', [])); }
+    else {
+      const dates = Array.from(new Set(H.map((r) => r.date))).sort(), last = dates[dates.length - 1], ago = add(last, -7);
+      const cur = H.filter((r) => r.date === last);
+      const me = cur.find((r) => r.self) || {}, others = cur.filter((r) => !r.self);
+      const byRating = cur.slice().sort((a, b) => (b.rating - a.rating) || (b.count - a.count));
+      const byCount = cur.slice().sort((a, b) => b.count - a.count);
+      const rr = byRating.findIndex((r) => r.self) + 1, rc = byCount.findIndex((r) => r.self) + 1;
+      const avgR = d3.mean(others, (r) => r.rating), avgC = d3.mean(others, (r) => r.count);
+      const prev = H.filter((r) => r.self && r.date <= ago).sort((a, b) => (a.date < b.date ? 1 : -1))[0];
+      take.textContent = me.name + '平均 ' + (me.rating == null ? '—' : me.rating.toFixed(1)) + ' 星，在 ' + cur.length + ' 家中排第 ' + rr + '；評論數 ' + fmtInt(me.count || 0) + ' 則，排第 ' + rc + '。（資料日期 ' + last + '）';
+      setKpi('#gr-ov-k1', me.rating == null ? '—' : me.rating.toFixed(1), ['排名第 ' + rr + ' / ' + cur.length + (prev ? '；比 7 天前 ' + sgn(Math.round((me.rating - prev.rating) * 10) / 10, (x) => x.toFixed(1)) : '；7 天後可比較變化')]);
+      setKpi('#gr-ov-k2', avgR == null ? '—' : avgR.toFixed(2), [me.rating != null && avgR != null ? '山海樓與競品平均差 ' + sgn(Math.round((me.rating - avgR) * 100) / 100, (x) => x.toFixed(2)) : '']);
+      setKpi('#gr-ov-k3', fmtInt(me.count || 0), ['排名第 ' + rc + ' / ' + cur.length + (prev ? '；7 天內新增 ' + fmtInt(me.count - prev.count) + ' 則' : '；7 天後可比較變化')]);
+      setKpi('#gr-ov-k4', avgC == null ? '—' : fmtInt(Math.round(avgC)), ['']);
+    }
+    drawComp();
+    drawOvSenti();
+  }
+  function drawOvSenti() {
+    const tb = $('#gr-ov-senti tbody'); tb.replaceChildren();
+    const ss = loadSelfSent(), cs = loadCompSent(), self = loadRows(), H = compHist();
+    if (!H) return;
+    const names = Array.from(new Set(H.map((r) => r.name)));
+    const sname = selfName();
+    const rows = names.map((n) => {
+      let list;
+      if (n === sname) list = ss && self ? self.filter((r) => r.hasText && ss.has(r.id)).map((r) => ss.get(r.id)) : [];
+      else list = cs ? (compRows(n) || []).filter((r) => cs.has(r.id)).map((r) => cs.get(r.id)) : [];
+      const c = { '正面': 0, '混合': 0, '負面': 0, '中立': 0 }; list.forEach((x) => { c[x.s] = (c[x.s] || 0) + 1; });
+      return { n, self: n === sname, total: list.length, c };
+    }).sort((a, b) => (b.self - a.self) || ((b.total ? b.c['正面'] / b.total : 0) - (a.total ? a.c['正面'] / a.total : 0)));
+    rows.forEach((r) => {
+      const tr = document.createElement('tr'); tr.dataset.key = r.n; if (r.self) tr.classList.add('me');
+      const share = (k) => (r.total ? r.c[k] / r.total : null);
+      [r.n + (r.self ? '（全部評論）' : '（樣本）'), fmtInt(r.total), pc(share('正面')), pc(share('混合')), pc(share('負面'))].forEach((v) => tr.appendChild(el('td', '', v)));
+      const td = el('td'); const mini = el('div', 'gr-mini');
+      SKINDS.forEach((k) => { if (!r.total || !r.c[k]) return; const i = el('i'); i.style.width = (r.c[k] / r.total * 100) + '%'; i.style.background = sColor(k); mini.appendChild(i); });
+      td.appendChild(mini); tr.appendChild(td);
+      if (r.total && r.total < 20) tr.children[1].classList.add('gr-none');
+      tb.appendChild(tr);
+    });
+  }
+  function goStore(name) {
+    STORE = name; TAB = 'st'; DETAIL = null;
+    redraw();
+    const t = $('.gr-tabs'); if (t && t.scrollIntoView) t.scrollIntoView({ block: 'start' });
+  }
+  function bindTabs() {
+    $('.gr-tabs').addEventListener('click', (ev) => {
+      const b = ev.target.closest('.gr-tab'); if (!b) return;
+      if (b.dataset.tab === 'ov') { TAB = 'ov'; redraw(); return; }
+      if (b.dataset.store) goStore(b.dataset.store);
+    });
+  }
+  let tabNames = '';
+  function drawTabs() {
+    const H = compHist();
+    const sname = selfName();
+    const names = H ? Array.from(new Set(H.map((r) => r.name))) : [sname];
+    const ORDER = ['金蓬萊', '明福', '欣葉', '米香', '富錦樹', '元紀', '晶華軒', '天香樓', '請客樓'];
+    const rank = (n) => { const i = ORDER.findIndex((k) => n.indexOf(k) >= 0); return i < 0 ? 99 : i; };
+    const ordered = [sname].concat(names.filter((n) => n !== sname).sort((x, y) => rank(x) - rank(y)));
+    const nav = $('.gr-tabs');
+    if (ordered.join('|') !== tabNames) {
+      tabNames = ordered.join('|');
+      nav.querySelectorAll('.gr-tab[data-store]').forEach((x) => x.remove());
+      ordered.forEach((n) => {
+        const b = el('button', 'gr-tab' + (n === sname ? ' me-tab' : ''), n);
+        b.type = 'button'; b.setAttribute('role', 'tab'); b.dataset.store = n;
+        nav.appendChild(b);
+      });
+    }
+    const cur = STORE || sname;
+    nav.querySelectorAll('.gr-tab').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.tab === 'ov' ? TAB === 'ov' : (TAB === 'st' && b.dataset.store === cur))));
+    $('#gr-page-ov').hidden = TAB !== 'ov';
+    $('#gr-page-st').hidden = TAB !== 'st';
+  }
+
+
+  /* ---------- 狀態 ---------- */
+  function showStatus(status) {
+    const stateEl = $('#gr-state'), content = $('#gr-content');
+    const ok = status === 'ok';
+    content.style.display = ok ? '' : 'none';
+    $('#gr-dist-card').style.display = ok ? '' : 'none';
+    stateEl.replaceChildren();
+    stateEl.classList.toggle('on', !ok);
+    stateEl.classList.toggle('dash-skeleton', status === 'loading');
+    if (ok || status === 'loading') return;
+    stateEl.appendChild(el('span', 'gr-dot'));
+    stateEl.appendChild(el('span', '', 'Failed to load'));
+  }
+
+  function redraw() {
+    drawTabs();
+    if (TAB === 'ov') { drawOverview(); return; }
+    const self = isSelf();
+    const st = dash.data(self ? 'reviews' : 'comp_reviews');
+    showStatus(st.status);
+    let rows = loadRows();
+    if (!self) rows = compRows(STORE);
+    if (!rows) return;
+    if (self) { SENT = loadSelfSent(); } else {
+      SENT = loadCompSent();
+      const ds = rows.map((r) => r.date).filter(Boolean).sort();
+      LO = ds[0] || ''; HI = ds[ds.length - 1] || '';
+    }
+    const ban = $('#gr-sample');
+    ban.hidden = self;
+    ban.textContent = self ? '' : '⚠ ' + STORE + '的分析只根據 ' + fmtInt(rows.length) + ' 則評論樣本（Google 每天最多提供 5 則，會慢慢累積），僅供參考。各星等占比、每季與逐年趨勢 Google 未提供。';
+    const p = getP();
+    const win = winOf(p);
+    drawFilters(p, win);
+    drawHeaderAndKpi(rows, p, win);
+    drawDist(rows, p);
+    drawQuarterly(rows, p, win);
+    drawSentiment(rows, p);
+    drawYears(rows, p);
+    drawThemes(rows, p);
+    drawLang(rows, p);
+    drawList(rows, p);
+    drawDetails(rows, p);
+  }
+
+  bindFilters();
+  bindListFilters();
+  bindComp();
+  bindTabs();
+  dash.onData(redraw);
+})();
+
+}
+</script>
+</body>
+</html>
